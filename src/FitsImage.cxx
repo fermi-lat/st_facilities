@@ -3,11 +3,10 @@
  * @brief Implementation of FitsImage member functions
  * @authors J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsImage.cxx,v 1.2 2004/08/25 17:18:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsImage.cxx,v 1.3 2005/02/14 20:58:52 jchiang Exp $
  *
  */
 
-#include <cassert>
 #include <cmath>
 
 #include <iostream>
@@ -81,8 +80,8 @@ void FitsImage::getSolidAngles(std::vector<double> &solidAngles) const {
          int indx = i + j*m_axes[0].size;
          double thetamin = (m_axisVectors[1][j] - m_axes[1].step/2.)*M_PI/180;
          double thetamax = (m_axisVectors[1][j] + m_axes[1].step/2.)*M_PI/180;
-         solidAngles[indx] = m_axes[0].step*M_PI/180
-            *(sin(thetamax) - sin(thetamin));
+         solidAngles[indx] = std::fabs(m_axes[0].step*M_PI/180
+                                       *(sin(thetamax) - sin(thetamin)));
       }
    }
 }
