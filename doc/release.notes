@@ -3,8 +3,9 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.5 2004/09/28 14:51:40 jchiang Exp $
+  $Id: release.notes,v 1.6 2004/10/04 18:31:48 jchiang Exp $
 
+  29-Oct-04 v0r3p1 JC    use tip v2*
   04-Oct-04 v0r3   JC    add writeChecksum function
   28-Sep-04 v0r2p2 JC    make FitsImage methods virtual for subclassing
   21-Sep-04 v0r2p1 JP    add test file
