@@ -3,8 +3,9 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.1.1.1 2004/08/25 04:55:03 jchiang Exp $
+  $Id: release.notes,v 1.2 2004/08/26 04:11:06 jchiang Exp $
 
+  21-Sep-04 v0r2   JP    add Env, FileSys facilities
   25-Aug-04 v0r1   JC    add linear interpolater
   24-Aug-04 v0     JC    initial import
  
