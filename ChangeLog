@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: peachey  Tue Sep  7 07:15:26 PDT 2004
+st_facilities/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+Add some facilities for interactions with environment variables and
+dealing with paths.
+    *
+------------------------------------------------------------
 User: jchiang  Thu Aug 26 10:02:24 PDT 2004
 st_facilities/src/test
 
