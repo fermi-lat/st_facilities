@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Oct  4 11:30:44 PDT 2004
+st_facilities/src
+
+Modified Files:
+	FitsUtil.cxx 
+Log Message:
+add writeChecksum function
+    *
+------------------------------------------------------------
 User: jchiang  Tue Sep 28 07:51:40 PDT 2004
 st_facilities/doc
 
