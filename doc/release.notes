@@ -3,8 +3,9 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.4 2004/09/24 16:41:16 peachey Exp $
+  $Id: release.notes,v 1.5 2004/09/28 14:51:40 jchiang Exp $
 
+  04-Oct-04 v0r3   JC    add writeChecksum function
   28-Sep-04 v0r2p2 JC    make FitsImage methods virtual for subclassing
   21-Sep-04 v0r2p1 JP    add test file
   21-Sep-04 v0r2   JP    add Env, FileSys facilities
