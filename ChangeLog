@@ -1,5 +1,15 @@
 ------------------------------------------------------------
 User: peachey  Tue Sep  7 07:15:27 PDT 2004
+st_facilities/src
+
+Added Files:
+	Env.cxx 
+Log Message:
+Add some facilities for interactions with environment variables and
+dealing with paths.
+    *
+------------------------------------------------------------
+User: peachey  Tue Sep  7 07:15:27 PDT 2004
 st_facilities/st_facilities
 
 Added Files:
