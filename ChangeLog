@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: peachey  Tue Sep 21 19:10:14 PDT 2004
+st_facilities/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+Set a macro used by the unit test.
+    *
+------------------------------------------------------------
 User: peachey  Tue Sep  7 07:15:27 PDT 2004
 st_facilities/src
 
