@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Aug 26 10:02:24 PDT 2004
+st_facilities/src/test
+
+Modified Files:
+	PowerLaw.h test.cxx 
+Log Message:
+remove hard-wired values in test code
+    *
+------------------------------------------------------------
 User: jchiang  Wed Aug 25 21:11:06 PDT 2004
 st_facilities/doc
 
