@@ -3,7 +3,7 @@ version v0r1
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.1.1.1 2004/08/25 04:55:02 jchiang Exp $
+# $Id: requirements,v 1.2 2004/08/26 04:11:05 jchiang Exp $
 
 use f2c v2r*
 use tip v1r*
@@ -11,6 +11,8 @@ use facilities v2r*
 use cfitsio v1r* IExternal
 
 apply_pattern ST_library option="-no_share *.c "
+
+set STTEST "sttest"
 
 private
 
