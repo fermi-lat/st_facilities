@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Wed Aug 25 10:18:51 PDT 2004
+st_facilities/src
+
+Modified Files:
+	FitsImage.cxx 
+Log Message:
+include <cmath> for windows
+
+    *
+------------------------------------------------------------
 User: jchiang  Tue Aug 24 21:55:04 PDT 2004
 st_facilities
 
