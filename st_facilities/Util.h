@@ -3,7 +3,7 @@
  * @brief Some basic utility functions.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.1.1.1 2004/08/25 04:55:03 jchiang Exp $
  */
 
 #ifndef st_facilities_Util_h
@@ -23,7 +23,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.4 2004/05/07 02:26:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.1.1.1 2004/08/25 04:55:03 jchiang Exp $
  */
 
 class Util {
@@ -63,6 +63,11 @@ public:
 
    /// @return true if the filename ends in ".xml" extension
    static bool isXmlFile(std::string filename);
+
+   /// Linear interpolation.
+   static double interpolate(const std::vector<double> &x,
+                             const std::vector<double> &y,
+                             double xx);
 
    /// A zeroth order bilinear interpolater.
    static double bilinear(const std::vector<double> &xx, double x,
