@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Sep 28 07:49:46 PDT 2004
+st_facilities/st_facilities
+
+Modified Files:
+	FitsImage.h 
+Log Message:
+allow subclassing and overloading of methods
+    *
+------------------------------------------------------------
 User: peachey  Fri Sep 24 09:42:22 PDT 2004
 st_facilities/cmt
 
