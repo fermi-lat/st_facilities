@@ -3,8 +3,9 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.3 2004/09/22 02:14:34 peachey Exp $
+  $Id: release.notes,v 1.4 2004/09/24 16:41:16 peachey Exp $
 
+  28-Sep-04 v0r2p2 JC    make FitsImage methods virtual for subclassing
   21-Sep-04 v0r2p1 JP    add test file
   21-Sep-04 v0r2   JP    add Env, FileSys facilities
   25-Aug-04 v0r1   JC    add linear interpolater
