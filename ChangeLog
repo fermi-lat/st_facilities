@@ -1,0 +1,29 @@
+------------------------------------------------------------
+User: jchiang  Tue Aug 24 21:55:04 PDT 2004
+st_facilities
+
+Log Message:
+initial import
+
+Status:
+
+Vendor Tag:	GLAST
+Release Tags:	v0
+		
+N st_facilities/.cvsignore
+N st_facilities/cmt/requirements
+N st_facilities/src/FitsImage.cxx
+N st_facilities/src/dgaus8.c
+N st_facilities/src/FitsUtil.cxx
+N st_facilities/src/Util.cxx
+N st_facilities/src/test/test.cxx
+N st_facilities/src/test/PowerLaw.h
+N st_facilities/st_facilities/FitsImage.h
+N st_facilities/st_facilities/Util.h
+N st_facilities/st_facilities/dgaus8.h
+N st_facilities/st_facilities/FitsUtil.h
+N st_facilities/doc/release.notes
+
+No conflicts created by this import
+
+    *
