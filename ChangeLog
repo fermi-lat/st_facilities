@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: peachey  Tue Sep  7 07:15:27 PDT 2004
+st_facilities/st_facilities
+
+Added Files:
+	Env.h 
+Log Message:
+Add some facilities for interactions with environment variables and
+dealing with paths.
+    *
+------------------------------------------------------------
 User: peachey  Tue Sep  7 07:15:26 PDT 2004
 st_facilities/src/test
 
