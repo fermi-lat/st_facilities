@@ -3,11 +3,12 @@
  * @brief Implementation of FitsImage member functions
  * @authors J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/Likelihood/src/FitsImage.cxx,v 1.16 2004/08/20 15:39:39 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsImage.cxx,v 1.1.1.1 2004/08/25 04:55:02 jchiang Exp $
  *
  */
 
 #include <cassert>
+#include <cmath>
 
 #include <iostream>
 #include <memory>
