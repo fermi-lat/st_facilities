@@ -1,9 +1,9 @@
 package st_facilities
-version v0r4p1
+version v0r4p2
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.8 2005/02/14 20:58:51 jchiang Exp $
+# $Id: requirements,v 1.9 2005/02/15 23:07:10 jchiang Exp $
 
 use f2c v2r*
 use tip v2*
