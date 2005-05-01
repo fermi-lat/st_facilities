@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sun May  1 14:35:26 PDT 2005
+st_facilities/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+fix unit test; tagging v0r4p2
+    *
+------------------------------------------------------------
+User: jchiang  Sun May  1 14:35:26 PDT 2005
 st_facilities/doc
 
 Modified Files:
