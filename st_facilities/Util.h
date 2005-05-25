@@ -3,7 +3,7 @@
  * @brief Some basic utility functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.1.1.1 2004/08/25 04:55:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.2 2004/08/25 20:32:16 jchiang Exp $
  */
 
 #ifndef st_facilities_Util_h
@@ -23,7 +23,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.1.1.1 2004/08/25 04:55:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.2 2004/08/25 20:32:16 jchiang Exp $
  */
 
 class Util {
@@ -69,10 +69,15 @@ public:
                              const std::vector<double> &y,
                              double xx);
 
-   /// A zeroth order bilinear interpolater.
+   /// A bilinear interpolater.
    static double bilinear(const std::vector<double> &xx, double x,
                           const std::vector<double> &yy, double y, 
                           const std::vector<double> &z);
+
+   /// A bilinear interpolater operating on a vector of vectors
+   static double bilinear(const std::vector<double> &xx, double x,
+                          const std::vector<double> &yy, double y, 
+                          const std::vector< std::vector<double> > &z);
 
    /// @return true if eObj.what() contains the targetMessage
    ///         as a substring.
