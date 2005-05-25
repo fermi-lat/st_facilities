@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed May 25 16:12:15 PDT 2005
+st_facilities/st_facilities
+
+Modified Files:
+	Util.h 
+Log Message:
+overload bilinear
+    *
+------------------------------------------------------------
+User: jchiang  Wed May 25 16:12:15 PDT 2005
 st_facilities/src
 
 Modified Files:
