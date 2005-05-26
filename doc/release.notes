@@ -3,8 +3,9 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.9 2005/02/15 23:07:10 jchiang Exp $
+  $Id: release.notes,v 1.10 2005/05/01 21:35:26 jchiang Exp $
 
+  26-May-05 v0r4p3 JC    add version of bilinear to handle vector of vectors
   01-May-05 v0r4p2 JC    comment out FileSys test that is sure to 
                          fail on Windows
   15-Feb-05 v0r4p1 JC    take abs. mag. of pixel solid angle expression
