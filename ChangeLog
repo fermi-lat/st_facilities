@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Sep 14 09:49:54 PDT 2005
+st_facilities/src
+
+Modified Files:
+	Util.cxx 
+Log Message:
+add routine to strip extraneous carriage returns
+    *
+------------------------------------------------------------
 TAG
 Tag name: v0r4p3, operation: add
 Package: st_facilities
