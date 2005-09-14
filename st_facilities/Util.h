@@ -3,7 +3,7 @@
  * @brief Some basic utility functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.2 2004/08/25 20:32:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.3 2005/05/25 23:12:15 jchiang Exp $
  */
 
 #ifndef st_facilities_Util_h
@@ -23,7 +23,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.2 2004/08/25 20:32:16 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.3 2005/05/25 23:12:15 jchiang Exp $
  */
 
 class Util {
@@ -46,9 +46,17 @@ public:
    ///        from the file.
    /// @param skip The comment string. Lines beginning with this string are
    ///        not put into lines.
+   /// @param cleanLines Flag to remove spurious carriage return characters
+   ///        introduced by Windows formatting of ascii files.
    static void readLines(std::string inputFile, 
                          std::vector<std::string> &lines,
-                         const std::string &skip = "#");
+                         const std::string &skip = "#",
+                         bool cleanLines=false);
+
+   /// @brief Remove carriage return characters from Windows formatted
+   ///        text files.
+   /// @param line The string to be cleaned.
+   static void cleanLine(std::string & line);
 
    /// @brief Determine if a file is a FITS file by looking for the "SIMPLE"
    ///        keyword as the first six characters of the file.  If it is
