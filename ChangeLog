@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Sep 14 09:49:54 PDT 2005
+st_facilities/st_facilities
+
+Modified Files:
+	Util.h 
+Log Message:
+add routine to strip extraneous carriage returns
+    *
+------------------------------------------------------------
+User: jchiang  Wed Sep 14 09:49:54 PDT 2005
 st_facilities/src
 
 Modified Files:
