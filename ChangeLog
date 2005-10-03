@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Oct  3 09:11:05 PDT 2005
+st_facilities/st_facilities
+
+Modified Files:
+	FitsImage.h 
+Log Message:
+use tip and astro::SkyProj
+    *
+------------------------------------------------------------
+User: jchiang  Mon Oct  3 09:11:05 PDT 2005
 st_facilities/src/test
 
 Modified Files:
