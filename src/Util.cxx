@@ -3,7 +3,7 @@
  * @brief
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.4 2005/09/14 16:49:53 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.5 2005/10/05 03:27:30 jchiang Exp $
  */
 
 #include <algorithm>
@@ -265,7 +265,7 @@ namespace st_facilities {
    bool Util::expectedException(const std::exception & eObj, 
                                 const std::string & targetMessage) {
       std::string message(eObj.what());
-      return message.find_first_of(targetMessage.c_str()) 
+      return message.find(targetMessage.c_str()) 
          != std::string::npos;
    }
 

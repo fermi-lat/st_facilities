@@ -3,7 +3,7 @@
  * @brief Test program for st_facilities
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/test/test.cxx,v 1.5 2005/05/01 21:35:26 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/test/test.cxx,v 1.6 2005/10/03 16:11:05 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -129,6 +129,7 @@ void st_facilitiesTests::test_Util_expectedException() {
       test_Util_file_ok();
    } catch (std::exception & eObj) {
       CPPUNIT_ASSERT(Util::expectedException(eObj, "File not found"));
+      CPPUNIT_ASSERT(!Util::expectedException(eObj, "File not fund"));
    }
 }
 
