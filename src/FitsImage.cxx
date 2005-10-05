@@ -3,7 +3,7 @@
  * @brief Implementation of FitsImage member functions
  * @authors J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsImage.cxx,v 1.4 2005/02/15 23:05:43 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsImage.cxx,v 1.5 2005/10/03 16:11:04 jchiang Exp $
  *
  */
 
@@ -238,7 +238,10 @@ astro::SkyProj * FitsImage::skyProjCreate(const std::string & fitsFile,
 
    delete image;
 
-   return new astro::SkyProj(trans, crpix, crval, cdelt, crota2, galactic);
+   astro::SkyProj * proj = 
+      new astro::SkyProj(trans, crpix, crval, cdelt, crota2, galactic);
+
+   return proj;
 }
 
 } // namespace st_facilities
