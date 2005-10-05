@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Oct  4 22:19:00 PDT 2005
+st_facilities/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+bug fix in Util::expectedException
+    *
+------------------------------------------------------------
+User: jchiang  Tue Oct  4 22:19:00 PDT 2005
 st_facilities/src
 
 Modified Files:
