@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Oct  4 20:27:30 PDT 2005
+st_facilities/src
+
+Modified Files:
+	Util.cxx 
+Log Message:
+deal with endpoints
+    *
+------------------------------------------------------------
 User: jchiang  Mon Oct  3 09:11:05 PDT 2005
 st_facilities/st_facilities
 
