@@ -3,7 +3,7 @@
  * @brief Declaration of FitsImage class
  * @authors J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.3 2005/02/14 20:58:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.4 2005/10/03 16:11:05 jchiang Exp $
  *
  */
 
@@ -14,6 +14,7 @@
 #include <vector>
 
 namespace astro {
+   class SkyDir;
    class SkyProj;
 }
 
@@ -30,7 +31,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *    
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.3 2005/02/14 20:58:52 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.4 2005/10/03 16:11:05 jchiang Exp $
  *
  */
 
@@ -77,6 +78,13 @@ public:
    /// @param extension The name of the relevent FITS image extension.
    static astro::SkyProj * skyProjCreate(const std::string & fitsFile,
                                          const std::string & extension="");
+
+   /// @brief Compute the solid angle of a region defined by four
+   /// ordered directions on the sky, joined by great circles.
+   static double solidAngle(const astro::SkyDir & A,
+                            const astro::SkyDir & B, 
+                            const astro::SkyDir & C,
+                            const astro::SkyDir & D);
 
 protected:
 
