@@ -3,8 +3,9 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.11 2005/05/26 22:45:18 jchiang Exp $
+  $Id: release.notes,v 1.12 2005/09/14 18:11:16 jchiang Exp $
 
+  07-Oct-05 v0r6   JC    refactor FitsImage to use astro::SkyProj
   14-Sep-05 v0r5   JC    add cleanLines routine to strip CRs from input lines
                          from Windows formatted text files
   26-May-05 v0r4p3 JC    add version of bilinear to handle vector of vectors
