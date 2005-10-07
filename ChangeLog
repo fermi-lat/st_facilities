@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Oct  6 17:51:02 PDT 2005
+st_facilities/st_facilities
+
+Modified Files:
+	FitsImage.h 
+Log Message:
+new solid angle imp
+    *
+------------------------------------------------------------
+User: jchiang  Thu Oct  6 17:51:02 PDT 2005
 st_facilities/src/test
 
 Modified Files:
