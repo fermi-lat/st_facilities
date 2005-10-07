@@ -3,7 +3,7 @@
  * @brief Declaration of FitsImage class
  * @authors J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.5 2005/10/07 00:51:02 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.6 2005/10/07 15:15:21 jchiang Exp $
  *
  */
 
@@ -31,7 +31,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *    
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.5 2005/10/07 00:51:02 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.6 2005/10/07 15:15:21 jchiang Exp $
  *
  */
 
@@ -39,7 +39,7 @@ class FitsImage {
     
 public:
 
-   FitsImage() : m_proj(0) {}
+   FitsImage() {}
 
    FitsImage(const std::string & fitsfile, 
              const std::string & extension="");
@@ -118,9 +118,6 @@ protected:
 
    /// The FITS image data
    std::vector<float> m_image;
-
-   /// The file-specific projection information.
-   astro::SkyProj * m_proj;
 
    void setProjection(const tip::Header & header);
 
