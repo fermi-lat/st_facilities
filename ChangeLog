@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Oct  7 08:15:20 PDT 2005
+st_facilities/src
+
+Modified Files:
+	FitsImage.cxx 
+Log Message:
+clean up unused methods; banish unneeded ST_library pattern
+    *
+------------------------------------------------------------
 User: jchiang  Fri Oct  7 08:15:19 PDT 2005
 st_facilities/cmt
 
