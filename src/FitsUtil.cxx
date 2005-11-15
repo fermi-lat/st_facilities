@@ -3,7 +3,7 @@
  * @brief Implementation for utility class.
  * @author J. Chiang
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsUtil.cxx,v 1.1.1.1 2004/08/25 04:55:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsUtil.cxx,v 1.2 2004/10/04 18:30:43 jchiang Exp $
  */
 
 #include <cassert>
@@ -95,6 +95,7 @@ void FitsUtil::getFitsColNames(const std::string & filename, int hdu,
    const tip::Table * my_table =
       tip::IFileSvc::instance().readTable(filename, extName);
    columnNames = my_table->getValidFields();
+   delete my_table;
 }
 
 void FitsUtil::writeChecksums(const std::string & filename) {
