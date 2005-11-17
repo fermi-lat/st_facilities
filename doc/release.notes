@@ -3,8 +3,9 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.12 2005/09/14 18:11:16 jchiang Exp $
+  $Id: release.notes,v 1.13 2005/10/07 19:09:24 jchiang Exp $
 
+  17-Nov-05 v0r6p1 JC    patch tag for missing delete in FitsUtil
   07-Oct-05 v0r6   JC    refactor FitsImage to use astro::SkyProj
   14-Sep-05 v0r5   JC    add cleanLines routine to strip CRs from input lines
                          from Windows formatted text files
