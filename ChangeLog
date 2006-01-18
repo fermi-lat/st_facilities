@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jan 17 21:47:39 PST 2006
+st_facilities/st_facilities
+
+Modified Files:
+	FitsImage.h 
+Log Message:
+add direct access to image data
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceToolsv6r2, operation: add
 Package: st_facilities
