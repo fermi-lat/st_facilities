@@ -3,7 +3,7 @@
  * @brief Declaration of FitsImage class
  * @authors J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.6 2005/10/07 15:15:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.7 2005/10/07 18:38:55 jchiang Exp $
  *
  */
 
@@ -31,7 +31,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *    
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.6 2005/10/07 15:15:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsImage.h,v 1.7 2005/10/07 18:38:55 jchiang Exp $
  *
  */
 
@@ -72,6 +72,10 @@ public:
    /// m_axis[1] represents a latitudinal coordinate.  The pixel values
    /// will be indexed by column then row, indx = i + j*NAXIS1.
    virtual void getSolidAngles(std::vector<double> & solidAngles) const;
+
+   const std::vector<float> & imageData() const {
+      return m_image;
+   }
 
    /// @brief Factory method to create an astro::SkyProj object.
    /// @param fitsFile FITS file containing the WCS projection information.
