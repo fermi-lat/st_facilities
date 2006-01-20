@@ -3,7 +3,7 @@
  * @brief Implementation of Env class
  * @authors James Peachey, HEASARC/GSSC
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Env.cxx,v 1.1 2004/09/07 14:15:27 peachey Exp $
  *
  */
 #include <iostream>
@@ -139,7 +139,7 @@ namespace st_facilities {
 
     // First attempt to expand the pattern $<pkg>ROOT/data.
     try {
-      expandEnvVar(appendFileName(getPkgRoot(pkg_id), "xmlData"), dir);
+      expandEnvVar(appendFileName(getPkgRoot(pkg_id), "xml"), dir);
     } catch (const std::exception &) {
       // Expansion failed, so try the install area.
       dir = getEnv("XMLPATH");
