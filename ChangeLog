@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: peachey  Thu Jan 19 18:27:01 PST 2006
+st_facilities/src
+
+Modified Files:
+	Env.cxx 
+Log Message:
+Use simply PKGROOT/xml for xml files.
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: v0r6p2, operation: add
 Package: st_facilities
