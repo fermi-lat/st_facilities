@@ -1,4 +1,23 @@
 ------------------------------------------------------------
+TAG
+Tag name: v0r6p5, operation: add
+Package: st_facilities
+User: jchiang  Wed Mar 15 21:54:43 2006
+Files:
+  st_facilities/.cvsignore  1.1.1.1
+  st_facilities/ChangeLog  1.88
+  st_facilities/cmt/requirements  1.19
+  st_facilities/data/list_file  1.1
+  st_facilities/doc/release.notes  1.18
+  st_facilities/src/Env.cxx  1.2
+  st_facilities/src/FitsUtil.cxx  1.3
+  st_facilities/src/FitsImage.cxx  1.9
+  st_facilities/src/Util.cxx  1.7
+  st_facilities/src/FileSys.cxx  1.1
+  st_facilities/src/dgaus8.c  1.1.1.1
+
+    *
+------------------------------------------------------------
 User: jchiang  Wed Mar 15 21:54:23 PST 2006
 st_facilities/doc
 
