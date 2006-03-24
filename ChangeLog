@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Mar 24 07:50:13 PST 2006
+st_facilities/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+use v* for cppunit
+    *
+------------------------------------------------------------
+User: jchiang  Fri Mar 24 07:50:13 PST 2006
 st_facilities/cmt
 
 Modified Files:
