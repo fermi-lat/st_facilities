@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr  5 15:05:15 PDT 2006
+st_facilities/st_facilities
+
+Modified Files:
+	Util.h 
+Log Message:
+add Util::writeDateKeywords; tagging v0r7
+    *
+------------------------------------------------------------
 User: jchiang  Wed Apr  5 15:05:14 PDT 2006
 st_facilities/src
 
