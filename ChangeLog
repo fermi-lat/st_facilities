@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Apr  5 15:05:14 PDT 2006
+st_facilities/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+add Util::writeDateKeywords; tagging v0r7
+    *
+------------------------------------------------------------
+User: jchiang  Wed Apr  5 15:05:14 PDT 2006
 st_facilities/cmt
 
 Modified Files:
