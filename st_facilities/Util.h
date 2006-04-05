@@ -3,7 +3,7 @@
  * @brief Some basic utility functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.3 2005/05/25 23:12:15 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.4 2005/09/14 16:49:54 jchiang Exp $
  */
 
 #ifndef st_facilities_Util_h
@@ -14,6 +14,12 @@
 
 #include "facilities/Util.h"
 
+#include "astro/JulianDate.h"
+
+namespace tip {
+   class Extension;
+}
+
 namespace st_facilities {
 
 /**
@@ -23,7 +29,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.3 2005/05/25 23:12:15 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.4 2005/09/14 16:49:54 jchiang Exp $
  */
 
 class Util {
@@ -91,6 +97,25 @@ public:
    ///         as a substring.
    static bool expectedException(const std::exception & eObj,
                                  const std::string & targetMessage);
+
+   /// @brief Write the TSTART, TSTOP, DATE-OBS, DATE-END, ONTIME, TELAPSE
+   /// keywords in the desired FITS extension.
+   /// @param table FITS extension to be modified
+   /// @param start_time observation start time in MET seconds
+   /// @param stop_time observation stop time in MET seconds
+   /// @param extension set to true if this is not the primary FITS HDU,
+   ///        otherwise the TSTART, TSTOP, ONTIME, TELAPSE keywords will
+   ///        be written
+   /// @param mission_start The mission start time, with official date as
+   ///        the default value
+   static void writeDateKeywords(tip::Extension * table, double start_time,
+                                 double stop_time, bool extension=true,
+                                 const astro::JulianDate & mission_start
+                                 =astro::JulianDate(2001, 1, 1, 0));
+   
+   /// @return The current time ascertained using the <ctime> standard
+   /// library.
+   static astro::JulianDate currentTime();
 
 };
 
