@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Apr  5 22:08:00 PDT 2006
+st_facilities/st_facilities
+
+Modified Files:
+	Util.h 
+Log Message:
+disable SWIG build of Util::currentTime(); tagging v0r7p1
+    *
+------------------------------------------------------------
 User: jchiang  Wed Apr  5 22:07:59 PDT 2006
 st_facilities/doc
 
