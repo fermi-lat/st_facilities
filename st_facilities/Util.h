@@ -3,7 +3,7 @@
  * @brief Some basic utility functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.4 2005/09/14 16:49:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.5 2006/04/05 22:05:14 jchiang Exp $
  */
 
 #ifndef st_facilities_Util_h
@@ -29,7 +29,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.4 2005/09/14 16:49:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.5 2006/04/05 22:05:14 jchiang Exp $
  */
 
 class Util {
@@ -113,9 +113,11 @@ public:
                                  const astro::JulianDate & mission_start
                                  =astro::JulianDate(2001, 1, 1, 0));
    
+#ifndef SWIG   
    /// @return The current time ascertained using the <ctime> standard
    /// library.
    static astro::JulianDate currentTime();
+#endif
 
 };
 
