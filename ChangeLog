@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed Apr  5 22:07:59 PDT 2006
+st_facilities/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+disable SWIG build of Util::currentTime(); tagging v0r7p1
+    *
+------------------------------------------------------------
+User: jchiang  Wed Apr  5 22:07:59 PDT 2006
 st_facilities/cmt
 
 Modified Files:
