@@ -3,7 +3,7 @@
  * @brief
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.7 2006/02/13 06:09:44 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.8 2006/04/05 22:05:14 jchiang Exp $
  */
 
 #include <cassert>
@@ -48,6 +48,16 @@ namespace {
                return xx.size() - 1;
             }
          }
+      }
+   }
+   void strip_at_sign(std::string & input) {
+      if (input.find_first_of("@") == 0) {
+         std::string output = "";
+         std::string::iterator it = input.begin() + 1;
+         for ( ; it != input.end(); ++it) {
+            output += *it;
+         }
+         input = output;
       }
    }
 }
@@ -100,6 +110,7 @@ namespace st_facilities {
 
    void Util::resolve_fits_files(std::string filename, 
                                  std::vector<std::string> &files) {
+      ::strip_at_sign(filename);
       facilities::Util::expandEnvVar(&filename);
       files.clear();
 // Read the first line of the file and see if the first 6 characters
