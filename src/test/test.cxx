@@ -3,7 +3,7 @@
  * @brief Test program for st_facilities
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/test/test.cxx,v 1.7 2005/10/05 05:19:00 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/test/test.cxx,v 1.8 2005/10/07 00:51:02 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -132,6 +132,9 @@ void st_facilitiesTests::test_Util_expectedException() {
 void st_facilitiesTests::test_Util_resolve_fits_files() {
    std::vector<std::string> lines;
    Util::resolve_fits_files(m_filename, lines);
+   CPPUNIT_ASSERT(lines.size() == 3);
+
+   Util::resolve_fits_files("@" + m_filename, lines);
    CPPUNIT_ASSERT(lines.size() == 3);
 }
 
