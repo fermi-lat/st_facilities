@@ -3,7 +3,7 @@
  * @brief
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.8 2006/04/05 22:05:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.9 2006/04/19 05:38:03 jchiang Exp $
  */
 
 #include <cassert>
@@ -283,20 +283,14 @@ namespace st_facilities {
          header["DATE-END"].set(date_stop.getGregorianDate());
       } catch (...) {
       }
-      if (extension) {
-// Do not write these keywords if this is the primary HDU.
-         double duration = stop_time - start_time;
+//       if (extension) {
+// // Do not write these keywords if this is the primary HDU.
          try {
             header["TSTART"].set(start_time);
             header["TSTOP"].set(stop_time);
          } catch (...) {
          }
-         try {
-            header["ONTIME"].set(duration);
-            header["TELAPSE"].set(duration);
-         } catch (...) {
-         }
-      }
+//       }
    }
 
    astro::JulianDate Util::currentTime() {
