@@ -3,7 +3,7 @@
  * @brief
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.9 2006/04/19 05:38:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.10 2006/07/25 00:16:54 jchiang Exp $
  */
 
 #include <cassert>
@@ -267,6 +267,7 @@ namespace st_facilities {
    void Util::writeDateKeywords(tip::Extension * table, double start_time, 
                                 double stop_time, bool extension,
                                 const astro::JulianDate & mission_start) {
+      (void)(extension);
       static double secsPerDay(8.64e4);
       tip::Header & header = table->getHeader();
       astro::JulianDate current_time = currentTime();
