@@ -3,8 +3,10 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.23 2006/04/19 05:38:03 jchiang Exp $
+  $Id: release.notes,v 1.24 2006/07/25 00:18:31 jchiang Exp $
 
+  10-Feb-07 v0r8   JC    add Dgaus8 wrapper; comment out s_stop and 
+                         error message calls in dgaus8.c
   24-Jul-06 v0r7p3 JC    in Util::writeDateKeywords do not write ONTIME or
                          TELAPSE; do write TSTART and TSTOP for all HDUs
   18-Apr-06 v0r7p2 JC    strip @ sign from file list filenames
