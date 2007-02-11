@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Feb 10 16:21:02 PST 2007
+st_facilities/src
+
+Modified Files:
+	Dgaus8.cxx 
+Log Message:
+use explicit Gaussian quadrature in failsafe integrator
+    *
+------------------------------------------------------------
+User: jchiang  Sat Feb 10 16:21:02 PST 2007
 st_facilities/doc
 
 Modified Files:
