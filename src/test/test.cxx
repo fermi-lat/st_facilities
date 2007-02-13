@@ -3,7 +3,7 @@
  * @brief Test program for st_facilities
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/test/test.cxx,v 1.9 2006/04/19 05:38:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/test/test.cxx,v 1.10 2007/02/10 17:45:01 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -19,7 +19,7 @@
 #include <cppunit/extensions/HelperMacros.h>
 
 #include "st_facilities/dgaus8.h"
-#include "st_facilities/Dgaus8.h"
+#include "st_facilities/GaussianQuadrature.h"
 #include "PowerLaw.h"
 
 #include "st_facilities/Env.h"
@@ -34,7 +34,7 @@ class st_facilitiesTests : public CppUnit::TestFixture {
    CPPUNIT_TEST_SUITE(st_facilitiesTests);
 
    CPPUNIT_TEST(test_dgaus8);
-   CPPUNIT_TEST(test_Dgaus8);
+   CPPUNIT_TEST(test_GaussianQuadrature);
    CPPUNIT_TEST_EXCEPTION(test_Util_file_ok, std::runtime_error);
    CPPUNIT_TEST(test_Util_readLines);
    CPPUNIT_TEST(test_Util_expectedException);
@@ -52,7 +52,7 @@ public:
    void tearDown();
 
    void test_dgaus8();
-   void test_Dgaus8();
+   void test_GaussianQuadrature();
    void test_Util_file_ok();
    void test_Util_readLines();
    void test_Util_expectedException();
@@ -109,7 +109,7 @@ void st_facilitiesTests::test_dgaus8() {
    CPPUNIT_ASSERT(std::fabs((result - true_value)/true_value) < tol);
 }
 
-void st_facilitiesTests::test_Dgaus8() {
+void st_facilitiesTests::test_GaussianQuadrature() {
    double xmin(0);
    double xmax(4.);
    double err(1e-5);
@@ -125,7 +125,8 @@ void st_facilitiesTests::test_Dgaus8() {
    }
    double tol(1e-4);
 
-   double result(Dgaus8::integrate(&power_law, xmin, xmax, err, ier));
+   double result(GaussianQuadrature::integrate(&power_law, xmin, xmax,
+                                               err, ier));
 
    CPPUNIT_ASSERT(std::fabs((result - true_value)/true_value) < tol);
 }
