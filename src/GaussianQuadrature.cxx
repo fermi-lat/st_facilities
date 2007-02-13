@@ -1,20 +1,20 @@
 /**
- * @file Dgaus8.cxx
+ * @file GaussianQuadrature.cxx
  * @brief Class wrapper for dgaus8
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Dgaus8.cxx,v 1.1 2007/02/10 17:45:01 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/GaussianQuadrature.cxx,v 1.2 2007/02/11 00:21:02 jchiang Exp $
  */
 
 #include <vector>
 
 #include "st_facilities/dgaus8.h"
-#include "st_facilities/Dgaus8.h"
+#include "st_facilities/GaussianQuadrature.h"
 
 namespace st_facilities {
 
-double Dgaus8::integrate(D_fp func, double xmin, double xmax,
-                         double error, long & ier) {
+double GaussianQuadrature::integrate(D_fp func, double xmin, double xmax,
+                                     double error, long & ier) {
    double integral(0);
    dgaus8_(func, &xmin, &xmax, &error, &integral, &ier);
    if (ier == 1) {
