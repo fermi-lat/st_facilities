@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Feb 13 12:31:46 PST 2007
+st_facilities/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+change name of Dgaus8 files since windoze filenames are not case-sensitive
+    *
+------------------------------------------------------------
+User: jchiang  Tue Feb 13 12:31:46 PST 2007
 st_facilities/src
 
 Added Files:
