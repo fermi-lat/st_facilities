@@ -3,8 +3,9 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.25 2007/02/11 00:21:02 jchiang Exp $
+  $Id: release.notes,v 1.26 2007/02/13 20:35:01 jchiang Exp $
 
+  15-Mar-07 v0r10  JC    add C++ version of dgaus8 to GaussianQuadrature class
   13-Feb-07 v0r9   JC    change names of Dgaus8 files since Windoze filenames
                          are not case-sensitive
   10-Feb-07 v0r8   JC    add Dgaus8 wrapper; comment out s_stop and 
