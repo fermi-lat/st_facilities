@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Mar 15 10:00:32 PDT 2007
+st_facilities/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+incorporate C++ version of dgaus8 in GaussianQuadrature class and modify test code
+    *
+------------------------------------------------------------
+User: jchiang  Thu Mar 15 10:00:32 PDT 2007
 st_facilities/src
 
 Modified Files:
