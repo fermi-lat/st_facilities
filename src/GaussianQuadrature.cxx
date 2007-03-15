@@ -3,9 +3,12 @@
  * @brief Class wrapper for dgaus8
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/GaussianQuadrature.cxx,v 1.2 2007/02/11 00:21:02 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/GaussianQuadrature.cxx,v 1.1 2007/02/13 20:31:46 jchiang Exp $
  */
 
+#include <cmath>
+
+#include <algorithm>
 #include <vector>
 
 #include "st_facilities/dgaus8.h"
@@ -88,4 +91,3 @@ double GaussianQuadrature::integrate(D_fp func, double xmin, double xmax,
 }
 
 } // namespace st_facilities
-
