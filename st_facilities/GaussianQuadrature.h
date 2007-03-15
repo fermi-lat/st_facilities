@@ -3,12 +3,13 @@
  * @brief Wrapper for dgaus8.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/GaussianQuadrature.h,v 1.1 2007/02/13 20:31:47 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/GaussianQuadrature.h,v 1.2 2007/03/15 17:00:33 jchiang Exp $
  */
 
 #ifndef st_facilities_GaussianQuadrature_h
 #define st_facilities_GaussianQuadrature_h
 
+#include <cmath>
 #include <stdexcept>
 
 namespace {
@@ -39,7 +40,7 @@ public:
  */
    template<typename Functor>
    static double dgaus8(Functor & fun, double a, double b,
-                        double & err=1e-5, int & ierr=1) {
+                        double & err, int & ierr) {
       const double x1 = 1.83434642495649805E-01;     
       const double x2 = 5.25532409916328986E-01;
       const double x3 = 7.96666477413626740E-01;     
