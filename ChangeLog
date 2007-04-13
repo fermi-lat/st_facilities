@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Apr 12 23:42:11 PDT 2007
+st_facilities/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+disable declspec decorations for windows builds; tagging v0r10p2
+    *
+------------------------------------------------------------
+User: jchiang  Thu Apr 12 23:42:11 PDT 2007
 st_facilities/cmt
 
 Modified Files:
