@@ -4,7 +4,7 @@
  * Windows.
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/libStApiExports.h,v 1.1 2006/03/13 17:01:12 jchiang Exp $
  */
 
 #ifndef st_facilities_libStApiExports_h
@@ -29,10 +29,10 @@
 #if (defined(_WIN32) && defined(_MSC_VER))
 # ifdef ST_DLL_EXPORTS
 #  undef  SCIENCETOOLS_API
-#  define SCIENCETOOLS_API __declspec(dllexport)
+#  define SCIENCETOOLS_API //__declspec(dllexport)
 # else
 #  undef  SCIENCETOOLS_API
-#  define SCIENCETOOLS_API __declspec(dllimport)
+#  define SCIENCETOOLS_API //__declspec(dllimport)
 # endif
 #else
 // The gcc compiler (i.e. the Linux/Unix compiler) exports the Universe
