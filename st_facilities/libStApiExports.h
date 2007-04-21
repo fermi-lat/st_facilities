@@ -4,7 +4,7 @@
  * Windows.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/libStApiExports.h,v 1.1 2006/03/13 17:01:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/libStApiExports.h,v 1.2 2007/04/13 06:42:11 jchiang Exp $
  */
 
 #ifndef st_facilities_libStApiExports_h
@@ -26,7 +26,7 @@
 // SCIENCETOOLS_API will expand to __declspec(dllimport) so that
 // symbols decorated with SCIENCETOOLS_API are imported from the DLL.
 
-#if (defined(_WIN32) && defined(_MSC_VER))
+#if (defined(_WIN32) && defined(_MSC_VER) && _MSC_VER<1400 )
 # ifdef ST_DLL_EXPORTS
 #  undef  SCIENCETOOLS_API
 #  define SCIENCETOOLS_API //__declspec(dllexport)
