@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: burnett  Sat Apr 21 15:09:44 PDT 2007
+st_facilities/st_facilities
+
+Modified Files:
+	libStApiExports.h 
+Log Message:
+don't apply declspec for VS2005
+    *
+------------------------------------------------------------
 TAG
 Tag name: v0r10p2, operation: add
 Package: st_facilities
