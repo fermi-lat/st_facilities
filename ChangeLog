@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Wed May 16 10:16:41 PDT 2007
+st_facilities/st_facilities
+
+Modified Files:
+	GaussianQuadrature.h 
+Log Message:
+add dgaus8Exception; tagging v0r11
+    *
+------------------------------------------------------------
+User: jchiang  Wed May 16 10:16:41 PDT 2007
 st_facilities/doc
 
 Modified Files:
