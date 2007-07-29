@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Jul 28 23:11:08 PDT 2007
+st_facilities/cmt
+
+Modified Files:
+	requirements 
+Log Message:
+use cfitsio to test if file is a FITS file
+    *
+------------------------------------------------------------
 TAG
 Tag name: v0r11, operation: add
 Package: st_facilities
