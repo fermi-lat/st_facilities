@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Jul 28 23:11:08 PDT 2007
+st_facilities/st_facilities
+
+Modified Files:
+	Util.h 
+Log Message:
+use cfitsio to test if file is a FITS file
+    *
+------------------------------------------------------------
+User: jchiang  Sat Jul 28 23:11:08 PDT 2007
 st_facilities/src
 
 Modified Files:
