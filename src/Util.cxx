@@ -3,7 +3,7 @@
  * @brief
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.10 2006/07/25 00:16:54 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.11 2007/02/10 04:36:34 jchiang Exp $
  */
 
 #include <cassert>
@@ -13,6 +13,8 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
+
+#include "fitsio.h"
 
 #include "facilities/Util.h"
 
@@ -106,6 +108,22 @@ namespace st_facilities {
          facilities::Util::stringTokenize(line, CR, tokens);
          line = tokens.front();
       }
+   }
+
+   bool Util::isFitsFile(const std::string & infile) {
+      fitsfile * fp(0);
+      int status(0);
+      fits_open_file(&fp, const_cast<char *>(infile.c_str()), 
+                     READONLY, &status);
+      if (0 != status) {
+         return false;
+      }
+      fits_close_file(fp, &status);
+      if (status != 0) {
+         throw std::runtime_error("Util::isFitsFile: Error closing file "
+                                  + infile);
+      }
+      return true;
    }
 
    void Util::resolve_fits_files(std::string filename, 
