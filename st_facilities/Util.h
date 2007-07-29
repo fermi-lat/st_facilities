@@ -3,7 +3,7 @@
  * @brief Some basic utility functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.5 2006/04/05 22:05:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.6 2006/04/06 05:07:59 jchiang Exp $
  */
 
 #ifndef st_facilities_Util_h
@@ -29,7 +29,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.5 2006/04/05 22:05:14 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/Util.h,v 1.6 2006/04/06 05:07:59 jchiang Exp $
  */
 
 class Util {
@@ -64,8 +64,11 @@ public:
    /// @param line The string to be cleaned.
    static void cleanLine(std::string & line);
 
-   /// @brief Determine if a file is a FITS file by looking for the "SIMPLE"
-   ///        keyword as the first six characters of the file.  If it is
+   /// @brief Test if infile is a FITS file by opening it with cfitsio
+   /// @param infile Input file name
+   static bool isFitsFile(const std::string & infile);
+
+   /// @brief Determine if filename is a FITS file using isFitsFile.  If it is
    ///        not a FITS file, then it is assumed to be a list if FITS files.
    /// @param filename The name of the candidate file; enviroment 
    ///        variables are expanded.
