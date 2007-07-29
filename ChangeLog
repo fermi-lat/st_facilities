@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sat Jul 28 23:19:48 PDT 2007
+st_facilities/src
+
+Modified Files:
+	Util.cxx 
+Log Message:
+use isFitsFile test in resolve_fits_file; tagging v0r12
+    *
+------------------------------------------------------------
 User: jchiang  Sat Jul 28 23:11:08 PDT 2007
 st_facilities/st_facilities
 
