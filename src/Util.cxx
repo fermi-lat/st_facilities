@@ -3,7 +3,7 @@
  * @brief
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.11 2007/02/10 04:36:34 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/Util.cxx,v 1.12 2007/07/29 06:11:08 jchiang Exp $
  */
 
 #include <cassert>
@@ -131,14 +131,7 @@ namespace st_facilities {
       ::strip_at_sign(filename);
       facilities::Util::expandEnvVar(&filename);
       files.clear();
-// Read the first line of the file and see if the first 6 characters
-// are "SIMPLE".  If so, then we assume it's a FITS file.
-      std::ifstream file(filename.c_str());
-      std::string firstLine;
-      std::getline(file, firstLine, '\n');
-      if (firstLine.find("SIMPLE") == 0) {
-// This is a FITS file. Return that as the sole element in the files
-// vector.
+      if (isFitsFile(filename)) {
          files.push_back(filename);
          return;
       } else {
