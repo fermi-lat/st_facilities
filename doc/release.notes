@@ -3,9 +3,10 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.30 2007/05/16 17:16:41 jchiang Exp $
+  $Id: release.notes,v 1.31 2007/07/29 06:11:08 jchiang Exp $
 
-  28-Jul-07 v0r12   JC   add Util::isFitFile test using cfitsio to
+  20-Oct-07 v0r13   JC   add FitsUtil::fcopy
+  28-Jul-07 v0r12   JC   add Util::isFitsFile test using cfitsio to
                          try to read in the file
   16-May-07 v0r11   JC   implement GaussianQuadrature::dgaus8Exception
   12-Apr-07 v0r10p2 JC   comment out declspec(...) in libStApiExports.h 
