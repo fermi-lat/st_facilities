@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Oct 20 08:50:21 PDT 2007
+st_facilities/doc
+
+Modified Files:
+	release.notes 
+Log Message:
+add FitsUtil::fcopy; tagging v0r13
+    *
+------------------------------------------------------------
+User: jchiang  Sat Oct 20 08:50:21 PDT 2007
 st_facilities/cmt
 
 Modified Files:
