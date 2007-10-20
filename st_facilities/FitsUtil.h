@@ -3,7 +3,7 @@
  * @brief Static functions for accessing data from FITS files.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsUtil.h,v 1.1.1.1 2004/08/25 04:55:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsUtil.h,v 1.2 2004/10/04 18:30:45 jchiang Exp $
  */
 
 #ifndef st_facilities_FitsUtil_h
@@ -17,7 +17,7 @@ namespace st_facilities {
 /**
  * @class FitsUtil
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsUtil.h,v 1.1.1.1 2004/08/25 04:55:03 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsUtil.h,v 1.2 2004/10/04 18:30:45 jchiang Exp $
  */
 
 class FitsUtil {
@@ -47,6 +47,13 @@ public:
 
    /// Write checksum and datasum information for all HDUs in a FITS file.
    static void writeChecksums(const std::string & filename);
+
+   /// Interface to fits_copy_file.
+   static void fcopy(std::string infilename,
+                     std::string outfilename,
+                     const std::string & extname, 
+                     const std::string & filterString="",
+                     bool clobber=false);
 
 protected:
 
