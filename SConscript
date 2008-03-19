@@ -1,4 +1,4 @@
-#$Id$
+#$Id: SConscript,v 1.2 2008/02/26 16:20:52 glastrm Exp $
 Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()
@@ -14,4 +14,5 @@ progEnv.Tool('st_facilitiesLib')
 progEnv.Tool('addLibrary', library = progEnv['cppunitLibs'])
 test_st_facilitiesBin = progEnv.Program('test_st_facilities', listFiles(['src/test/*.cxx']))
 
-progEnv.Tool('registerObjects', package = 'st_facilities', libraries = [st_facilitiesLib], testApps = [test_st_facilitiesBin], includes = listFiles(['st_facilities/*.h']))
+progEnv.Tool('registerObjects', package = 'st_facilities', libraries = [st_facilitiesLib], testApps = [test_st_facilitiesBin], includes = listFiles(['st_facilities/*.h']),
+             data = listFiles(['data/*'], recursive = True))
