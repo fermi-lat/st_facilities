@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Thu Jun 19 16:53:13 PDT 2008
+ScienceTools-scons/st_facilities
+
+Modified Files:
+	SConscript 
+Log Message:
+Added Author and Version fields
+    *
+------------------------------------------------------------
 TAG
 Tag name: st_facilities-00-13-01, operation: mov
 Package: st_facilities
