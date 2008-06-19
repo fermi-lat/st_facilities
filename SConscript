@@ -1,4 +1,8 @@
-#$Id: SConscript,v 1.2 2008/02/26 16:20:52 glastrm Exp $
+# -*- python -*-
+# $Id: SConscript,v 1.3 2008/03/19 20:41:43 glastrm Exp $
+# Authors: James Chiang <jchiang@slac.stanford.edu>
+# Version: st_facilities-00-13-01
+
 Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()
