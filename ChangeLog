@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Thu Oct  2 16:02:07 PDT 2008
+st_facilities/src
+
+Modified Files:
+	Util.cxx 
+Log Message:
+set TELASPE keyword to TSTOP-TSTART, but only if it already exists in the header; tagging v0r13p2
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-06-00, operation: del
 Package: st_facilities
