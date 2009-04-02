@@ -3,8 +3,10 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.32 2007/10/20 15:50:21 jchiang Exp $
+  $Id: release.notes,v 1.33 2008/10/02 23:08:35 jchiang Exp $
+  EOH
 
+  02-Apr-09 v0r14   JC   add FitsUtil::writeFilename(...)
   02-Oct-08 v0r13p2 JC   set TELAPSE keyword to TSTOP-TSTART in 
                          Util::writeDateKeywords
   25-Jan-08 v0r13p1 JC   tag for SCons build scripts
