@@ -3,7 +3,7 @@
  * @brief Implementation for utility class.
  * @author J. Chiang
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsUtil.cxx,v 1.3 2005/11/15 23:43:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsUtil.cxx,v 1.4 2007/10/20 15:50:21 jchiang Exp $
  */
 
 #include <cassert>
@@ -136,7 +136,17 @@ void FitsUtil::writeChecksums(const std::string & filename) {
       fits_report_error(stderr, status);
       throw std::runtime_error("FitsUtil::writeChecksums: cfitsio error.");
    }
-}   
+
+   writeFilename(filename);
+}
+
+void FitsUtil::writeFilename(const std::string & filename) {
+// Write FILENAME keyword to primary HDU
+   tip::Extension * phdu 
+      = tip::IFileSvc::instance().editExtension(filename, "");
+   phdu->getHeader().setKeyword("FILENAME", facilities::Util::basename(filename));
+   delete phdu;
+}
 
 void FitsUtil::fcopy(std::string infilename, 
                      std::string outfilename,
