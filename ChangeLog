@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Apr  2 12:10:35 PDT 2009
+st_facilities/st_facilities
+
+Modified Files:
+	FitsUtil.h 
+Log Message:
+add static function to update the FILENAME keyword in the primary HDU
+    *
+------------------------------------------------------------
+User: jchiang  Thu Apr  2 12:10:35 PDT 2009
 st_facilities/src
 
 Modified Files:
