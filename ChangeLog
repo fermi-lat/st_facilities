@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 TAG
+Tag name: v0r14, operation: mov
+Package: st_facilities
+User: glastrm  Fri Apr  3 08:39:17 2009
+Files:
+  st_facilities/SConscript  1.7
+
+    *
+------------------------------------------------------------
+TAG
 Tag name: v0r14, operation: add
 Package: st_facilities
 User: glastrm  Fri Apr  3 08:39:00 2009
