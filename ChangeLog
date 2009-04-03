@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: glastrm  Fri Apr  3 08:35:35 PDT 2009
+ScienceTools-scons/st_facilities
+
+Modified Files:
+	SConscript 
+Log Message:
+No longer set TRAP_FPE. It's set at top level
+    *
+------------------------------------------------------------
 TAG
 Tag name: st_facilities-00-14-00, operation: add
 Package: st_facilities
