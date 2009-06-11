@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Thu Jun 11 13:48:53 PDT 2009
+st_facilities/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+disable env var expansion tests because of SCons builds; tagging v0r14p1
+    *
+------------------------------------------------------------
+User: jchiang  Thu Jun 11 13:48:53 PDT 2009
 st_facilities/doc
 
 Modified Files:
