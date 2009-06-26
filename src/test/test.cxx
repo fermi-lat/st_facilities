@@ -3,7 +3,7 @@
  * @brief Test program for st_facilities
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/test/test.cxx,v 1.12 2007/03/15 17:00:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/test/test.cxx,v 1.13 2009/06/11 20:48:53 jchiang Exp $
  */
 
 #ifdef TRAP_FPE
@@ -41,8 +41,8 @@ class st_facilitiesTests : public CppUnit::TestFixture {
    CPPUNIT_TEST(test_Util_resolve_fits_files);
    CPPUNIT_TEST(test_Env_appendNames);
 //   CPPUNIT_TEST(test_Env_expandEnvVar);
-   CPPUNIT_TEST(test_Env_getDataDir);
-   CPPUNIT_TEST(test_FileSys_expandFileList);
+//    CPPUNIT_TEST(test_Env_getDataDir);
+//    CPPUNIT_TEST(test_FileSys_expandFileList);
 
    CPPUNIT_TEST_SUITE_END();
 
