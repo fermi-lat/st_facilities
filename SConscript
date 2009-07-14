@@ -1,5 +1,5 @@
 # -*- python -*-
-# $Id: SConscript,v 1.8 2009/06/11 21:30:46 glastrm Exp $
+# $Id: SConscript,v 1.9 2009/06/26 22:30:37 glastrm Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
 # Version: st_facilities-00-14-02
 
@@ -15,5 +15,11 @@ progEnv.Tool('st_facilitiesLib')
 progEnv.Tool('addLibrary', library = progEnv['cppunitLibs'])
 test_st_facilitiesBin = progEnv.Program('test_st_facilities', listFiles(['src/test/*.cxx']))
 
-progEnv.Tool('registerObjects', package = 'st_facilities', libraries = [st_facilitiesLib], testApps = [test_st_facilitiesBin], includes = listFiles(['st_facilities/*.h']),
+#progEnv.Tool('registerObjects', package = 'st_facilities', libraries = [st_facilitiesLib], testApps = [test_st_facilitiesBin], includes = listFiles(['st_facilities/*.h']),
+#             data = listFiles(['data/*'], recursive = True))
+
+progEnv.Tool('registerTargets', package = 'st_facilities',
+             staticLibraryCxts = [[st_facilitiesLib, libEnv]],
+             testAppCxts = [[test_st_facilitiesBin, progEnv]],
+             includes = listFiles(['st_facilities/*.h']),
              data = listFiles(['data/*'], recursive = True))
