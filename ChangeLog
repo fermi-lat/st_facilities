@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jrb  Tue Jul 14 10:13:19 PDT 2009
+ScienceTools-scons/st_facilities
+
+Modified Files:
+	SConscript 
+Log Message:
+Change to registerTargets
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: st_facilities-00-14-02, operation: add
 Package: st_facilities
