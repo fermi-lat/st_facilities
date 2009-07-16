@@ -1,7 +1,7 @@
 # -*- python -*-
-# $Id: SConscript,v 1.9 2009/06/26 22:30:37 glastrm Exp $
+# $Id: SConscript,v 1.10 2009/07/14 17:13:19 jrb Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
-# Version: st_facilities-00-14-02
+# Version: st_facilities-00-14-03
 
 Import('baseEnv')
 Import('listFiles')
