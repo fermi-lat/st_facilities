@@ -1,5 +1,5 @@
 # -*- python -*-
-# $Id: SConscript,v 1.10 2009/07/14 17:13:19 jrb Exp $
+# $Id: SConscript,v 1.11 2009/07/16 00:33:41 glastrm Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
 # Version: st_facilities-00-14-03
 
@@ -7,11 +7,13 @@ Import('baseEnv')
 Import('listFiles')
 progEnv = baseEnv.Clone()
 libEnv = baseEnv.Clone()
+libEnv.Append(CPPDEFINES = 'TRAP_FPE')
 
-libEnv.Tool('st_facilitiesLib', depsOnly = 1)
 st_facilitiesLib = libEnv.StaticLibrary('st_facilities', listFiles(['src/*.cxx', 'src/*.c']))
 
 progEnv.Tool('st_facilitiesLib')
+progEnv.Append(CPPDEFINES = 'TRAP_FPE')
+
 progEnv.Tool('addLibrary', library = progEnv['cppunitLibs'])
 test_st_facilitiesBin = progEnv.Program('test_st_facilities', listFiles(['src/test/*.cxx']))
 
