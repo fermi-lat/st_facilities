@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jrb  Fri Feb 26 17:03:36 PST 2010
+ScienceTools-scons/st_facilities/st_facilities
+
+Modified Files:
+	libStApiExports.h 
+Log Message:
+eliminate _declspec for SCons builds
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-16-00, operation: add
 Package: st_facilities
