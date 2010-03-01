@@ -1,9 +1,9 @@
 package st_facilities
-version v0r14p5
+version v0r14p6
 
 author James Chiang <jchiang@slac.stanford.edu>
 
-# $Id: requirements,v 1.38 2010/02/22 23:13:45 jrb Exp $
+# $Id: requirements,v 1.39 2010/02/25 00:43:06 jrb Exp $
 
 use astro v*
 use f2c v*
