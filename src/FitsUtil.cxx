@@ -3,11 +3,12 @@
  * @brief Implementation for utility class.
  * @author J. Chiang
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/src/FitsUtil.cxx,v 1.4 2007/10/20 15:50:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/src/FitsUtil.cxx,v 1.5 2009/04/02 19:10:35 jchiang Exp $
  */
 
 #include <cassert>
 #include <cmath>
+#include <cstdio>
 
 #include <algorithm>
 #include <iostream>
