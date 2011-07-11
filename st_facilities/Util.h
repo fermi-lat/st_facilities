@@ -3,7 +3,7 @@
  * @brief Some basic utility functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/Util.h,v 1.7 2007/07/29 06:11:08 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/Util.h,v 1.8 2010/11/28 03:50:32 jchiang Exp $
  */
 
 #ifndef st_facilities_Util_h
@@ -34,7 +34,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/Util.h,v 1.7 2007/07/29 06:11:08 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/Util.h,v 1.8 2010/11/28 03:50:32 jchiang Exp $
  */
 
 class Util {
@@ -121,6 +121,7 @@ public:
                                  const astro::JulianDate & mission_start
                                  =astro::JulianDate(2001, 1, 1, 0));
 
+#ifndef SWIG
    /// @brief Add SkyDir to pixel index interface to SkyProj
    static void skyDir2pixel(const astro::SkyProj & proj,
                             const astro::SkyDir & dir,
@@ -130,7 +131,6 @@ public:
    static void pixel2SkyDir(const astro::SkyProj & proj, double i, double j,
                             astro::SkyDir & dir);
    
-#ifndef SWIG   
    /// @return The current time ascertained using the <ctime> standard
    /// library.
    static astro::JulianDate currentTime();
