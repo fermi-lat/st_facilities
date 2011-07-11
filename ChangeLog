@@ -1,4 +1,14 @@
 ------------------------------------------------------------
+User: jchiang  Mon Jul 11 08:19:18 PDT 2011
+ScienceTools-scons/st_facilities/st_facilities
+
+Modified Files:
+	Util.h 
+Log Message:
+hide un-pythonic function from swig interface
+
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-24-00, operation: add
 Package: st_facilities
