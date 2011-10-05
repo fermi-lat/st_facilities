@@ -2,6 +2,14 @@
 TAG
 Tag name: GRBAnalysis-02-00-00, operation: add
 Package: st_facilities
+User: omodei  Tue Oct  4 18:24:10 2011
+Files:
+
+    *
+------------------------------------------------------------
+TAG
+Tag name: GRBAnalysis-02-00-00, operation: add
+Package: st_facilities
 User: omodei  Tue Oct  4 15:29:55 2011
 Files:
   st_facilities/.cvsignore  1.2
