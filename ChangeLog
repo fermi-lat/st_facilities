@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Oct  9 16:07:14 PDT 2011
+st_facilities
+
+Modified Files:
+	SConscript 
+Log Message:
+stag/GoGui_auto-tag
+    *
+------------------------------------------------------------
 TAG
 Tag name: st_facilities-00-15-01, operation: add
 Package: st_facilities
