@@ -3,9 +3,10 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.40 2010/03/01 18:25:38 jrb Exp $
+  $Id: release.notes,v 1.41 2010/11/28 07:29:24 jchiang Exp $
   EOH
 
+ st_facilities-00-15-01 09-Oct-2011 jchiang add explicit ifstream::close() as per [STGEN-128@JIRA]
  st_facilities-00-15-00 27-Nov-2010 jchiang add static functions to convert between pixels and SkyDirs for SkyProj objects
  st_facilities-00-14-06 01-Mar-2010    jrb Don't use _declspec for SCons builds
  st_facilities-00-14-05 24-Feb-2010    jrb TRAP_FPE is for Linux only
