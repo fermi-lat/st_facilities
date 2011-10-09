@@ -3,7 +3,7 @@
  * @brief
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/src/Util.cxx,v 1.14 2008/10/02 23:02:07 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/src/Util.cxx,v 1.15 2010/11/28 03:50:31 jchiang Exp $
  */
 
 #include <cassert>
@@ -101,6 +101,7 @@ namespace st_facilities {
             lines.push_back(line);
          }
       }
+      file.close();
    }
 
    void Util::cleanLine(std::string & line) {
