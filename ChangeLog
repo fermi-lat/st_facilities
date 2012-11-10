@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Fri Nov  9 23:22:51 PST 2012
+ScienceTools-scons/st_facilities/src
+
+Added Files:
+	Environment.cxx 
+Log Message:
+end the tyranny of having to call setupEnvironment all over the place
+    *
+------------------------------------------------------------
+User: jchiang  Fri Nov  9 23:22:51 PST 2012
 ScienceTools-scons/st_facilities
 
 Modified Files:
