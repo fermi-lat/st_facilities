@@ -3,9 +3,10 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.42 2011/10/09 17:30:00 jchiang Exp $
+  $Id: release.notes,v 1.43 2011/10/09 23:07:14 jchiang Exp $
   EOH
 
+ st_facilities-00-16-00 09-Nov-2012 jchiang end the tyranny of having to call setupEnvironment all over the place
  st_facilities-00-15-02 09-Oct-2011 jchiang retagging because of apparently failed tag for 00-15-01
  st_facilities-00-15-01 09-Oct-2011 jchiang add explicit ifstream::close() as per [STGEN-128@JIRA]
  st_facilities-00-15-00 27-Nov-2010 jchiang add static functions to convert between pixels and SkyDirs for SkyProj objects
