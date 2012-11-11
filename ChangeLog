@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Nov 10 19:37:47 PST 2012
+ScienceTools-scons/st_facilities/st_facilities
+
+Modified Files:
+	Environment.h 
+Log Message:
+add a couple more static functions
+    *
+------------------------------------------------------------
+User: jchiang  Sat Nov 10 19:37:47 PST 2012
 ScienceTools-scons/st_facilities/src
 
 Modified Files:
