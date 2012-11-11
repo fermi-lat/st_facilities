@@ -10,7 +10,7 @@
  *
  * @author J. Chiang
  *
- * $Header$
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/src/Environment.cxx,v 1.1 2012/11/10 07:22:51 jchiang Exp $
  */
 
 #include "facilities/commonUtilities.h"
@@ -32,7 +32,13 @@ Environment::Environment() {
    facilities::commonUtilities::setupEnvironment();
 }
 
-std::string Environment::packagePath(const std::string & package) const {
+std::string Environment::dataPath(const std::string & package) {
+   instance();
+   return facilities::commonUtilities::getDataPath(package);
+}
+
+std::string Environment::packagePath(const std::string & package) {
+   instance();
    return facilities::commonUtilities::getPackagePath(package);
 }
 
