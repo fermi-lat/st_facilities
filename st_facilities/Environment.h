@@ -10,7 +10,7 @@
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/Environment.h,v 1.1 2012/11/10 07:22:51 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/Environment.h,v 1.2 2012/11/11 00:18:22 jchiang Exp $
  */
 
 #ifndef st_facilities_Environment_h
@@ -28,7 +28,13 @@ public:
 
    static std::string dataPath(const std::string & package);
 
+   static std::string getEnv(const std::string & envvar);
+
    static std::string packagePath(const std::string & package);
+
+   static std::string pfilesPath(const std::string & package);
+
+   static std::string xmlPath(const std::string & package);
 
 protected:
 
