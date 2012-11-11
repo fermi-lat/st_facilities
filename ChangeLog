@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Sat Nov 10 16:18:22 PST 2012
+ScienceTools-scons/st_facilities/st_facilities
+
+Modified Files:
+	Environment.h 
+Log Message:
+convert to static functions; add dataPath(...)
+    *
+------------------------------------------------------------
+User: jchiang  Sat Nov 10 16:18:22 PST 2012
 ScienceTools-scons/st_facilities/src
 
 Modified Files:
