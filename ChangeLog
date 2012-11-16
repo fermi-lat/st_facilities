@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Fri Nov 16 12:36:51 PST 2012
+ScienceTools-scons/st_facilities/st_facilities
+
+Added Files:
+	Timer.h 
+Log Message:
+add Timer class
+    *
+------------------------------------------------------------
 TAG
 Tag name: st_facilities-00-17-00, operation: add
 Package: st_facilities
