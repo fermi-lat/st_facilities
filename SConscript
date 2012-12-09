@@ -1,5 +1,5 @@
 # -*- python -*-
-# $Id: SConscript,v 1.22 2012/11/11 03:54:29 jchiang Exp $
+# $Id: SConscript,v 1.23 2012/11/16 20:41:18 jchiang Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
 # Version: st_facilities-00-18-00
 
@@ -10,7 +10,7 @@ libEnv = baseEnv.Clone()
 if baseEnv['PLATFORM'] == "posix":
     libEnv.Append(CPPDEFINES = 'TRAP_FPE')
 
-st_facilitiesLib = libEnv.StaticLibrary('st_facilities',
+st_facilitiesLib = libEnv.SharedLibrary('st_facilities',
                                         listFiles(['src/*.cxx', 'src/*.c']))
 
 progEnv.Tool('st_facilitiesLib')
