@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Sun Dec  9 12:50:51 PST 2012
+ScienceTools-scons/st_facilities
+
+Modified Files:
+	SConscript 
+Log Message:
+build as shared library
+    *
+------------------------------------------------------------
 TAG
 Tag name: st_facilities-00-18-00, operation: add
 Package: st_facilities
