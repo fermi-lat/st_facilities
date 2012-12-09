@@ -3,9 +3,10 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.45 2012/11/11 03:54:29 jchiang Exp $
+  $Id: release.notes,v 1.46 2012/11/16 20:41:18 jchiang Exp $
   EOH
 
+ st_facilities-00-19-00 09-Dec-2012 jchiang build as shared library
  st_facilities-00-18-00 16-Nov-2012 jchiang add Timer class to aid in debugging and development
  st_facilities-00-17-00 10-Nov-2012 jchiang add some static functions
  st_facilities-00-16-00 09-Nov-2012 jchiang end the tyranny of having to call setupEnvironment all over the place
