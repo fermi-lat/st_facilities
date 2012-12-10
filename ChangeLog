@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: cohen  Mon Dec 10 02:17:45 PST 2012
+ScienceTools-scons/st_facilities/src
+
+Added Files:
+	Bilinear.cxx FitsTable.cxx 
+Log Message:
+copy over to st_facilities the Bilinear and FitsTable classes, that will be useful in GR AnalysisNtuple. These are protected by namespace, so this change should be independent from the corresponding deletion of the classes in irfs/latResponse, though the latter is in order eventually
+    *
+------------------------------------------------------------
 TAG
 Tag name: st_facilities-00-19-00, operation: add
 Package: st_facilities
