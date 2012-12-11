@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jrb  Tue Dec 11 13:18:42 PST 2012
+st_facilities
+
+Modified Files:
+	st_facilitiesLib.py 
+Log Message:
+fix include paths when building GR on Windows
+    *
+------------------------------------------------------------
 TAG
 Tag name: st_facilities-00-20-00, operation: add
 Package: st_facilities
