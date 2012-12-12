@@ -1,4 +1,4 @@
-#$Id: st_facilitiesLib.py,v 1.2 2008/02/26 16:20:52 glastrm Exp $
+#$Id: st_facilitiesLib.py,v 1.3 2012/12/11 21:18:41 jrb Exp $
 def generate(env, **kw):
 	if not kw.get('depsOnly',0):
 	    env.Tool('addLibrary', library = ['st_facilities'])
@@ -8,14 +8,8 @@ def generate(env, **kw):
 
 
 	env.Tool('astroLib')
-	env.Tool('tipLib')
-	env.Tool('facilitiesLib')
 	env.Tool('addLibrary', library = env['cfitsioLibs'])
 	env.Tool('addLibrary', library = env['f2cLibs'])
-
-	if env['PLATFORM'] == 'win32' and env.get('CONTAINERNAME','')=='GlastRelease':
-
-	    env.Tool('findPkgPath', package = 'facilities') 
 
 
 def exists(env):

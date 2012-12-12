@@ -1,5 +1,5 @@
 # -*- python -*-
-# $Id: SConscript,v 1.25 2012/12/09 20:51:21 jchiang Exp $
+# $Id: SConscript,v 1.26 2012/12/11 09:01:23 cohen Exp $
 # Authors: James Chiang <jchiang@slac.stanford.edu>
 # Version: st_facilities-00-20-00
 
@@ -10,6 +10,7 @@ libEnv = baseEnv.Clone()
 if baseEnv['PLATFORM'] == "posix":
     libEnv.Append(CPPDEFINES = 'TRAP_FPE')
 
+libEnv.Tool('addLinkDeps', package="st_facilities", toBuild="shared") 
 st_facilitiesLib = libEnv.SharedLibrary('st_facilities',
                                         listFiles(['src/*.cxx', 'src/*.c']))
 
