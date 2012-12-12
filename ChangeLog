@@ -1,13 +1,4 @@
 ------------------------------------------------------------
-User: heather  Tue Dec 11 16:49:33 PST 2012
-st_facilities
-
-Modified Files:
-	SConscript st_facilitiesLib.py 
-Log Message:
-big fix on Windows - thanks Joanne!
-    *
-------------------------------------------------------------
 User: jrb  Tue Dec 11 13:18:42 PST 2012
 st_facilities
 
