@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: cohen  Wed Dec 12 02:01:50 PST 2012
+st_facilities
+
+Modified Files:
+	st_facilitiesLib.py 
+Log Message:
+try to fix windows build?
+    *
+------------------------------------------------------------
 TAG
 Tag name: GRBAnalysis-02-02-02, operation: add
 Package: st_facilities
