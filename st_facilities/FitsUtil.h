@@ -3,7 +3,7 @@
  * @brief Static functions for accessing data from FITS files.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsUtil.h,v 1.3 2007/10/20 15:50:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/FitsUtil.h,v 1.4 2009/04/02 19:10:35 jchiang Exp $
  */
 
 #ifndef st_facilities_FitsUtil_h
@@ -17,7 +17,7 @@ namespace st_facilities {
 /**
  * @class FitsUtil
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/FitsUtil.h,v 1.3 2007/10/20 15:50:21 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/FitsUtil.h,v 1.4 2009/04/02 19:10:35 jchiang Exp $
  */
 
 class FitsUtil {
@@ -54,7 +54,7 @@ public:
    /// Interface to fits_copy_file.
    static void fcopy(std::string infilename,
                      std::string outfilename,
-                     const std::string & extname, 
+                     const std::string & extname="", 
                      const std::string & filterString="",
                      bool clobber=false);
 
