@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr  2 15:41:37 PDT 2013
+ScienceTools-scons/st_facilities/src
+
+Modified Files:
+	FitsUtil.cxx 
+Log Message:
+allow extname to be omitted in fcopy
+    *
+------------------------------------------------------------
 TAG
 Tag name: GlastRelease-20-08-11, operation: add
 Package: st_facilities
