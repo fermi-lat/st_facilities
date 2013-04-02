@@ -3,7 +3,7 @@
  * @brief Implementation for utility class.
  * @author J. Chiang
  * 
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/src/FitsUtil.cxx,v 1.5 2009/04/02 19:10:35 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/src/FitsUtil.cxx,v 1.6 2010/06/16 22:45:39 jchiang Exp $
  */
 
 #include <cassert>
@@ -168,7 +168,9 @@ void FitsUtil::fcopy(std::string infilename,
    }
    
    fitsfile * infile(0);
-   infilename = infilename + "[" + extname + "]";
+   if (extname != "") {
+      infilename = infilename + "[" + extname + "]";
+   }
    if (filterString != "") {
       infilename = infilename + "[" + filterString + "]";
    }
