@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Apr  2 15:41:38 PDT 2013
+ScienceTools-scons/st_facilities/st_facilities
+
+Modified Files:
+	FitsUtil.h 
+Log Message:
+allow extname to be omitted in fcopy
+    *
+------------------------------------------------------------
 User: jchiang  Tue Apr  2 15:41:37 PDT 2013
 ScienceTools-scons/st_facilities/src
 
