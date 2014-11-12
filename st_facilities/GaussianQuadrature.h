@@ -3,7 +3,7 @@
  * @brief Wrapper for dgaus8.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/st_facilities/st_facilities/GaussianQuadrature.h,v 1.3 2007/03/15 17:17:31 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/GaussianQuadrature.h,v 1.4 2007/05/16 17:16:41 jchiang Exp $
  */
 
 #ifndef st_facilities_GaussianQuadrature_h
@@ -11,6 +11,7 @@
 
 #include <cmath>
 #include <stdexcept>
+#include <string>
 
 namespace {
    inline const double sign(const double & x, const double & y) {
