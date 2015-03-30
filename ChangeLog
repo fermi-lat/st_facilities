@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Mon Mar 30 14:02:19 PDT 2015
+ScienceTools-scons/st_facilities/src
+
+Modified Files:
+	Util.cxx 
+Log Message:
+perform SkyProj::testpix2sph and throw out_of_range exception if pixel indices are out-of-range
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-10-00-03, operation: add
 Package: st_facilities
