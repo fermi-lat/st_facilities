@@ -3,7 +3,7 @@
  * @brief Some basic utility functions.
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/Util.h,v 1.8 2010/11/28 03:50:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/users/echarles/healpix_changes/st_facilities/st_facilities/Util.h,v 1.4 2015/03/05 19:58:48 echarles Exp $
  */
 
 #ifndef st_facilities_Util_h
@@ -22,7 +22,8 @@ namespace tip {
 
 namespace astro {
    class SkyDir;
-   class SkyProj;
+   // EAC, switch to using ProjBase base class (instead of SkyProj)
+   class ProjBase;
 }
 
 namespace st_facilities {
@@ -34,7 +35,7 @@ namespace st_facilities {
  *
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/Util.h,v 1.8 2010/11/28 03:50:32 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/users/echarles/healpix_changes/st_facilities/st_facilities/Util.h,v 1.4 2015/03/05 19:58:48 echarles Exp $
  */
 
 class Util {
@@ -122,13 +123,13 @@ public:
                                  =astro::JulianDate(2001, 1, 1, 0));
 
 #ifndef SWIG
-   /// @brief Add SkyDir to pixel index interface to SkyProj
-   static void skyDir2pixel(const astro::SkyProj & proj,
+   /// @brief Add SkyDir to pixel index interface to ProjBase 
+   static void skyDir2pixel(const astro::ProjBase & proj,
                             const astro::SkyDir & dir,
                             double & i, double & j);
 
-   /// @brief Add pixel index to SkyDir interface to SkyProj
-   static void pixel2SkyDir(const astro::SkyProj & proj, double i, double j,
+   /// @brief Add pixel index to SkyDir interface to ProjBase
+   static void pixel2SkyDir(const astro::ProjBase & proj, double i, double j,
                             astro::SkyDir & dir);
    
    /// @return The current time ascertained using the <ctime> standard
