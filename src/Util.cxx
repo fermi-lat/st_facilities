@@ -3,8 +3,10 @@
  * @brief
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/src/Util.cxx,v 1.16 2011/10/09 17:27:12 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/users/echarles/healpix_changes/st_facilities/src/Util.cxx,v 1.4 2015/03/05 19:58:47 echarles Exp $
  */
+
+#include <cassert>
 
 #include <algorithm>
 #include <fstream>
@@ -202,6 +204,7 @@ namespace st_facilities {
 
       double value = (1. - tt)*(1. - uu)*y1 + tt*(1. - uu)*y2 
          + tt*uu*y3 + (1. - tt)*uu*y4; 
+//       assert(value >= 0);
 //       if (value < 0.) {
 //          std::ostringstream message;
 //          message << "st_facilities::Util::bilinear:\n"
@@ -252,6 +255,7 @@ namespace st_facilities {
 
       double value = (1. - tt)*(1. - uu)*y1 + tt*(1. - uu)*y2 
          + tt*uu*y3 + (1. - tt)*uu*y4; 
+//       assert(value >= 0);
 //       if (value < 0.) {
 //          std::ostringstream message;
 //          message << "st_facilities::Util::bilinear:\n"
@@ -305,7 +309,8 @@ namespace st_facilities {
       }
    }
 
-   void Util::skyDir2pixel(const astro::SkyProj & proj,
+   // EAC, switch to using ProjBase base class (instead of SkyProj)
+   void Util::skyDir2pixel(const astro::ProjBase & proj,
                            const astro::SkyDir & dir,
                            double & i, double & j) {
       std::pair<double, double> pixels;
@@ -318,11 +323,9 @@ namespace st_facilities {
       j = pixels.second;
    }
 
-   void Util::pixel2SkyDir(const astro::SkyProj & proj, double i, double j,
+   // EAC, switch to using ProjBase base class (instead of SkyProj)
+   void Util::pixel2SkyDir(const astro::ProjBase & proj, double i, double j,
                            astro::SkyDir & dir) {
-      if (proj.testpix2sph(i, j) != 0) {
-         throw std::out_of_range("st_faciliities::Util::pixel2SkyDir");
-      }
       std::pair<double, double> coords;
       coords = proj.pix2sph(i, j);
       if (proj.isGalactic()) {
@@ -331,7 +334,7 @@ namespace st_facilities {
       } else {
          dir = astro::SkyDir(coords.first, coords.second,
                              astro::SkyDir::EQUATORIAL);
-      }
+      }         
    }
 
    astro::JulianDate Util::currentTime() {
