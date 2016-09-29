@@ -1,4 +1,4 @@
-#$Id: st_facilitiesLib.py,v 1.4 2012/12/12 00:49:33 heather Exp $
+#$Id: st_facilitiesLib.py,v 1.5 2012/12/12 10:01:50 cohen Exp $
 def generate(env, **kw):
     if not kw.get('depsOnly',0):
         env.Tool('addLibrary', library = ['st_facilities'])
@@ -8,7 +8,7 @@ def generate(env, **kw):
     env.Tool('addLibrary', library = env['cfitsioLibs'])
     env.Tool('addLibrary', library = env['f2cLibs'])
     env.Tool('addLibrary', library = env['cppunitLibs'])
-
+    env.Tool('addLibrary', library = env['gsllibs'])
 
 def exists(env):
 	return 1
