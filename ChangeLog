@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: mdwood  Thu Sep 29 11:55:13 PDT 2016
+ScienceTools-scons/st_facilities/src/test
+
+Modified Files:
+	test.cxx 
+Log Message:
+Adding GSL-based RootFinder class.
+    *
+------------------------------------------------------------
+User: mdwood  Thu Sep 29 11:55:13 PDT 2016
 ScienceTools-scons/st_facilities/src
 
 Added Files:
