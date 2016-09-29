@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: mdwood  Thu Sep 29 11:55:12 PDT 2016
+ScienceTools-scons/st_facilities
+
+Modified Files:
+	st_facilitiesLib.py 
+Log Message:
+Adding GSL-based RootFinder class.
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-11-03-00, operation: add
 Package: st_facilities
