@@ -3,9 +3,10 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.53 2015/03/30 21:10:23 jchiang Exp $
+  $Id: release.notes,v 1.54 2015/12/10 06:49:33 echarles Exp $
   EOH
 
+ st_facilities-00-22-00 29-Sep-2016 mdwood Add new RootFinder utility method.
  st_facilities-00-21-00 09-Dec-2015 echarles Replace SkyProj with ProjBase
  st_facilities-00-20-05 30-Mar-2015 jchiang perform SkyProj::testpix2sph and throw out_of_range exception if pixel indices are out-of-range
  st_facilities-00-20-04 08-Apr-2014 jchiang const fixes
