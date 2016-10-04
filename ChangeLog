@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Tue Oct  4 12:44:33 PDT 2016
+ScienceTools-scons/st_facilities/st_facilities
+
+Modified Files:
+	RootFinder.h 
+Log Message:
+enable RootFinder only for ScienceTools
+    *
+------------------------------------------------------------
+User: jchiang  Tue Oct  4 12:44:33 PDT 2016
 ScienceTools-scons/st_facilities
 
 Modified Files:
