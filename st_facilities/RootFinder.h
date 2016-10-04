@@ -3,11 +3,15 @@
  * @brief Wrapper for GSL root finder
  * @author M. Wood
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/GaussianQuadrature.h,v 1.5 2014/11/12 18:11:35 asercion Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/st_facilities/st_facilities/RootFinder.h,v 1.1 2016/09/29 18:55:13 mdwood Exp $
  */
 
 #ifndef st_facilities_RootFinder_h
 #define st_facilities_RootFinder_h
+
+// Don't build for containers other than ScienceTools since the gsl
+// libraries aren't available.
+#ifdef ScienceTools
 
 #include <iostream>
 #include <cmath>
@@ -87,4 +91,5 @@ public:
 
 }
 
+#endif // ScienceTools
 #endif // st_facilities_RootFinder_h
