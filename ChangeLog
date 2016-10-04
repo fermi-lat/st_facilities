@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Oct  4 13:29:22 PDT 2016
+ScienceTools-scons/st_facilities
+
+Modified Files:
+	st_facilitiesLib.py 
+Log Message:
+use try/except block to isolate gsllibs dependency
+    *
+------------------------------------------------------------
 User: jchiang  Tue Oct  4 12:44:33 PDT 2016
 ScienceTools-scons/st_facilities/st_facilities
 
