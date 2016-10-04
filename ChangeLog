@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Oct  4 12:44:33 PDT 2016
+ScienceTools-scons/st_facilities
+
+Modified Files:
+	st_facilitiesLib.py 
+Log Message:
+enable RootFinder only for ScienceTools
+    *
+------------------------------------------------------------
 TAG
 Tag name: st_facilities-00-22-00, operation: add
 Package: st_facilities
