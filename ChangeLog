@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: echarles  Tue Apr 25 16:41:28 PDT 2017
+st_facilities/src
+
+Modified Files:
+	Util.cxx 
+Log Message:
+EAC, protect against case that xx == x.back() in Util::interpolate
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-11-05-02, operation: add
 Package: st_facilities
