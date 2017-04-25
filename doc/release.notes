@@ -3,9 +3,10 @@
   @brief package st_facilities
 
   @verbatim
-  $Id: release.notes,v 1.55 2016/09/29 18:56:52 mdwood Exp $
+  $Id: release.notes,v 1.56 2016/10/04 20:42:05 jchiang Exp $
   EOH
 
+ st_facilities-00-22-02 25-Apr-2017 echarles EAC, protect against case that xx == x.back() in Util::interpolate
  st_facilities-00-22-01 04-Oct-2016 jchiang enable RootFinder builds only for ScienceTools
  st_facilities-00-22-00 29-Sep-2016 mdwood Add new RootFinder utility method.
  st_facilities-00-21-00 09-Dec-2015 echarles Replace SkyProj with ProjBase
