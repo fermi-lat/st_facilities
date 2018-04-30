@@ -9,7 +9,9 @@
 
 		http://www.netlib.org/f2c/libf2c.zip
 */
-
+#ifdef __cplusplus
+extern "C" {
+#endif
 #include "f2c.h"
 
 /* Table of constant values */
@@ -339,3 +341,6 @@ L140:
     return 0;
 } /* dgaus8_ */
 
+#ifdef __cplusplus
+}
+#endif
