@@ -66,9 +66,9 @@ static integer c_n1 = -1;
     static integer lmx, mxl;
     static doublereal area, anib;
     static integer nlmx, nbits;
-    extern doublereal d1mach_(integer *);
-    extern integer i1mach_(integer *);
-    extern /* Subroutine */ int xermsg_(char *, char *, char *, integer *, 
+    doublereal d1mach_(integer *);
+    integer i1mach_(integer *);
+    /* Subroutine */ int xermsg_(char *, char *, char *, integer *, 
 	    integer *, ftnlen, ftnlen, ftnlen);
 
 /* ***BEGIN PROLOGUE  DGAUS8 */
