@@ -10,8 +10,8 @@ libEnv = baseEnv.Clone()
 if baseEnv['PLATFORM'] == "posix":
     libEnv.Append(CPPDEFINES = 'TRAP_FPE')
 
-libEnv.Tool('addLinkDeps', package="st_facilities", toBuild="shared") 
-st_facilitiesLib = libEnv.SharedLibrary('st_facilities',
+# libEnv.Tool('addLinkDeps', package="st_facilities", toBuild="shared") 
+st_facilitiesLib = libEnv.StaticLibrary('st_facilities',
                                         listFiles(['src/*.cxx', 'src/*.c']))
 
 progEnv.Tool('st_facilitiesLib')
