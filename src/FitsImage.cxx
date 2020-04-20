@@ -128,7 +128,7 @@ void FitsImage::getImageData(std::vector<double> & imageData) const {
 }
 
 void FitsImage::read_fits_image() {
-   std::auto_ptr<const tip::Image>
+   std::unique_ptr<const tip::Image>
       image(tip::IFileSvc::instance().readImage(m_filename, m_extension));
 
    image->get(m_image);
