@@ -33,3 +33,17 @@ target_compile_definitions(st_facilities PUBLIC ScienceTools)
 
 add_executable(test_st_facilities src/test/test.cxx)
 target_link_libraries(test_st_facilities PRIVATE st_facilities PkgConfig::cppunit)
+
+###############################################################
+# Installation
+###############################################################
+install(DIRECTORY st_facilities DESTINATION ${FERMI_INSTALL_INCLUDEDIR})
+install(DIRECTORY data/ DESTINATION ${FERMI_INSTALL_DATADIR})
+
+install(
+  TARGETS st_facilities
+  # EXPORT fermiTargets
+  LIBRARY DESTINATION lib
+  ARCHIVE DESTINATION lib
+  INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
