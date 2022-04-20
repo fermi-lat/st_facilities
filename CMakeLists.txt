@@ -41,7 +41,7 @@ install(DIRECTORY st_facilities DESTINATION ${FERMI_INSTALL_INCLUDEDIR})
 install(DIRECTORY data/ DESTINATION ${FERMI_INSTALL_DATADIR})
 
 install(
-  TARGETS st_facilities
+  TARGETS st_facilities test_st_facilities
   # EXPORT fermiTargets
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
