@@ -22,11 +22,9 @@ target_include_directories(
 )
 
 target_link_libraries(
-  st_facilities PUBLIC
-  dgaus8
-  astro
-  PkgConfig::cfitsio
-  PkgConfig::gsl
+  st_facilities
+  PRIVATE dgaus8 PkgConfig::cfitsio tip
+  PUBLIC astro PkgConfig::gsl
 )
 
 target_compile_definitions(st_facilities PUBLIC ScienceTools)
