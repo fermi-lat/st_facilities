@@ -1,5 +1,5 @@
 add_library(dgaus8 OBJECT src/dgaus8.c)
-target_link_libraries(dgaus8 PUBLIC PkgConfig::f2c m)
+target_link_libraries(dgaus8 PUBLIC F2C::F2C)
 
 add_library(
   st_facilities STATIC
