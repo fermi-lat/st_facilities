@@ -32,6 +32,10 @@ target_compile_definitions(st_facilities PUBLIC ScienceTools)
 add_executable(test_st_facilities src/test/test.cxx)
 target_link_libraries(test_st_facilities PRIVATE st_facilities PkgConfig::cppunit)
 
+if(NOT APPLE)
+  target_compile_definitions(st_facilities PRIVATE TRAP_FPE)
+endif()
+
 ###############################################################
 # Installation
 ###############################################################
