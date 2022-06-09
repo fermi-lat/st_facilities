@@ -2,7 +2,7 @@ add_library(dgaus8 OBJECT src/dgaus8.c)
 target_link_libraries(dgaus8 PUBLIC f2c::f2c)
 
 add_library(
-  st_facilities STATIC
+  st_facilities 
   src/Bilinear.cxx
   src/Env.cxx
   src/Environment.cxx
