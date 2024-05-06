@@ -23,14 +23,14 @@ target_include_directories(
 
 target_link_libraries(
   st_facilities
-  PRIVATE dgaus8 PkgConfig::cfitsio tip
-  PUBLIC astro PkgConfig::gsl
+  PRIVATE dgaus8 cfitsio::cfitsio tip
+  PUBLIC astro GSL::gsl
 )
 
 target_compile_definitions(st_facilities PUBLIC ScienceTools)
 
 add_executable(test_st_facilities src/test/test.cxx)
-target_link_libraries(test_st_facilities PRIVATE st_facilities PkgConfig::cppunit)
+target_link_libraries(test_st_facilities PRIVATE st_facilities CppUnit::CppUnit)
 
 if(NOT APPLE)
   target_compile_definitions(st_facilities PRIVATE TRAP_FPE)
