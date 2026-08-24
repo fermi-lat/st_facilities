@@ -24,8 +24,11 @@ static logical c_false = FALSE_;
 static integer c__72 = 72;
 static logical c_true = TRUE_;
 
+typedef double (*DFUN_t)(double *);
+
 /* DECK DGAUS8 */
-/* Subroutine */ int dgaus8_(D_fp fun, doublereal *a, doublereal *b, 
+/*  int dgaus8_(D_fp fun, doublereal */
+/* Subroutine */ int dgaus8_(DFUN_t fun, doublereal *a, doublereal *b, 
 	doublereal *err, doublereal *ans, integer *ierr)
 {
     /* Initialized data */
@@ -208,6 +211,11 @@ L10:
     d__8 = d__1 + x3 * d__2;
     d__9 = d__1 - x4 * d__2;
     d__10 = d__1 + x4 * d__2;
+
+    /* Declare fun as a function pointer that takes a double pointer and returns double *
+    typedef double (*DFUN_t)(double *);
+    DFUN_t fun;  * Update the declaration at the top of the function */
+
     est = d__2 * (w1 * ((*fun)(&d__3) + (*fun)(&d__4)) + w2 * ((*fun)(&d__5) 
 	    + (*fun)(&d__6)) + (w3 * ((*fun)(&d__7) + (*fun)(&d__8)) + w4 * ((
 	    *fun)(&d__9) + (*fun)(&d__10))));
@@ -228,6 +236,10 @@ L20:
     d__7 = d__1 + x3 * hh[l - 1];
     d__8 = d__1 - x4 * hh[l - 1];
     d__9 = d__1 + x4 * hh[l - 1];
+    /* Declare fun as a function pointer that takes a double pointer and returns double *
+    typedef double (*DFUN_t)(double *);
+    DFUN_t fun;  * Update the declaration at the top of the function */
+
     gl = hh[l - 1] * (w1 * ((*fun)(&d__2) + (*fun)(&d__3)) + w2 * ((*fun)(&
 	    d__4) + (*fun)(&d__5)) + (w3 * ((*fun)(&d__6) + (*fun)(&d__7)) + 
 	    w4 * ((*fun)(&d__8) + (*fun)(&d__9))));
@@ -240,6 +252,7 @@ L20:
     d__7 = d__1 + x3 * hh[l - 1];
     d__8 = d__1 - x4 * hh[l - 1];
     d__9 = d__1 + x4 * hh[l - 1];
+
     gr[l - 1] = hh[l - 1] * (w1 * ((*fun)(&d__2) + (*fun)(&d__3)) + w2 * ((*
 	    fun)(&d__4) + (*fun)(&d__5)) + (w3 * ((*fun)(&d__6) + (*fun)(&
 	    d__7)) + w4 * ((*fun)(&d__8) + (*fun)(&d__9))));
