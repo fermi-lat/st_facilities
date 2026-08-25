@@ -1,11 +1,11 @@
-set(CMAKE_CXX_STANDARD 17 CACHE STRING "Override C++ standard" FORCE)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF CACHE BOOL "Disable extensions" FORCE)
+# set(CMAKE_CXX_STANDARD 17 CACHE STRING "Override C++ standard" FORCE)
+# set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# set(CMAKE_CXX_EXTENSIONS OFF CACHE BOOL "Disable extensions" FORCE)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # turn off strict type
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
-set(CMAKE_C_FLAGS="-std=gnu17")
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fpermissive")
+#set(CMAKE_C_FLAGS="-std=gnu17")
 
 add_library(dgaus8 OBJECT src/dgaus8.c)
 target_link_libraries(dgaus8 PRIVATE f2c::f2c)

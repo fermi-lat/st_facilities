@@ -27,8 +27,8 @@ static logical c_true = TRUE_;
 typedef double (*DFUN_t)(double *);
 
 /* DECK DGAUS8 */
-/*  int dgaus8_(D_fp fun, doublereal */
-/* Subroutine */ int dgaus8_(DFUN_t fun, doublereal *a, doublereal *b, 
+/*  int dgaus8_(D_fp fun, doublereal    DFUN_t fun(double *) */
+/* Subroutine */ int dgaus8_(D_fp fun, doublereal *a, doublereal *b, 
 	doublereal *err, doublereal *ans, integer *ierr)
 {
     /* Initialized data */
