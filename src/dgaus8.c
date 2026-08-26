@@ -32,8 +32,10 @@ typedef double (*DFUN_t)(double *);
 // typedef double (*D_fp)(double*);    // "from" f2c.h
 // double (*fun)(double *)
 // D_fp fun
+// doublereal (*fun)(doublereal*)
+// double (*fun)(double *)
 
-/* Subroutine */ int dgaus8_(double (*fun)(double *), doublereal *a, doublereal *b, 
+/* Subroutine */ int dgaus8_(doublereal (*fun)(doublereal *), doublereal *a, doublereal *b, 
 	doublereal *err, doublereal *ans, integer *ierr)
 {
     /* Initialized data */
