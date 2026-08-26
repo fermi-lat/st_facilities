@@ -28,7 +28,12 @@ typedef double (*DFUN_t)(double *);
 
 /* DECK DGAUS8 */
 /*  int dgaus8_(D_fp fun, doublereal    DFUN_t fun(double *) */
-/* Subroutine */ int dgaus8_(D_fp fun, doublereal *a, doublereal *b, 
+// (*fun)(double *)
+// typedef double (*D_fp)(double*);    // "from" f2c.h
+// double (*fun)(double *)
+// D_fp fun
+
+/* Subroutine */ int dgaus8_(double (*fun)(double *), doublereal *a, doublereal *b, 
 	doublereal *err, doublereal *ans, integer *ierr)
 {
     /* Initialized data */
