@@ -9,6 +9,7 @@
 #include <cassert>
 #include <cmath>
 #include <cstdio>
+#include <array>
 
 #include <algorithm>
 #include <iostream>
@@ -59,7 +60,7 @@ void FitsUtil::getRecordVector(const std::string & filename,
 void FitsUtil::getFitsHduName(const std::string &filename, int hdu,
                               std::string &hduName) {
    int status(0);
-   fitsfile * fptr = 0;
+   fitsfile * fptr = nullptr;
 
    fits_open_file(&fptr, filename.c_str(), READONLY, &status);
    if (status != 0) {
@@ -74,15 +75,19 @@ void FitsUtil::getFitsHduName(const std::string &filename, int hdu,
       throw std::runtime_error("FitsUtil::getFitsHduName:\n cfitsio error.");
    }
    
-   char extname[20];
-   char comment[72];
-   fits_read_key_str(fptr, "EXTNAME", extname, comment, &status);
+   // char extname[20];
+   std::array<char, 20> extname;
+   //  char comment[72];
+   std::array<char, 72> comment;
+
+
+   fits_read_key_str(fptr, "EXTNAME", extname.data(), comment.data(), &status);
    if (status != 0) {
       fits_report_error(stderr, status);
       throw std::runtime_error("FitsUtil::getFitsHduName:\n cfitsio error.");
    }
 
-   hduName = extname;
+   hduName = extname.data();
    fits_close_file(fptr, &status);
    if (status != 0) {
       fits_report_error(stderr, status);
@@ -107,7 +112,7 @@ void FitsUtil::writeChecksums(const std::string & filename) {
    unsigned int nhdus = summary.size();
 
    int status(0);
-   fitsfile * fptr = 0;
+   fitsfile * fptr = nullptr;
 
    fits_open_file(&fptr, filename.c_str(), READWRITE, &status);
    if (status != 0) {
@@ -160,14 +165,14 @@ void FitsUtil::fcopy(std::string infilename,
       outfilename = "!" + outfilename;
    }
 
-   fitsfile * outfile(0);
+   fitsfile * outfile(nullptr);
    fits_create_file(&outfile, const_cast<char *>(outfilename.c_str()),&status);
    if (status != 0) {
       fits_report_error(stderr, status);
       throw std::runtime_error("FitsUtil::fcopy:\n cfitsio error.");
    }
    
-   fitsfile * infile(0);
+   fitsfile * infile(nullptr);
    if (extname != "") {
       infilename = infilename + "[" + extname + "]";
    }

@@ -20,9 +20,10 @@
 #include "st_facilities/FitsTable.h"
 
 namespace {
-   size_t binIndex(double x, const std::vector<double> & xx) {
-      std::vector<double>::const_iterator ix = 
-         std::upper_bound(xx.begin(), xx.end(), x);
+   auto binIndex(double x, const std::vector<double> & xx) -> size_t {
+      // std::vector<double>::const_iterator ix = 
+      //    std::upper_bound(xx.begin(), xx.end(), x);
+      auto ix = std::upper_bound(xx.begin(), xx.end(), x);
       return ix - xx.begin();
    }
 }
@@ -32,7 +33,7 @@ namespace st_facilities {
 FitsTable::FitsTable(const std::string & filename,
                      const std::string & extname,
                      const std::string & tablename,
-                     size_t nrow) : m_interpolator(0) {
+                     size_t nrow) : m_interpolator(nullptr) {
 
    const tip::Table * table(tip::IFileSvc::instance().readTable(filename, 
                                                                 extname));
@@ -74,10 +75,10 @@ FitsTable::FitsTable(const std::string & filename,
    delete table;
 }
 
-FitsTable::FitsTable() : m_interpolator(0) {}
+FitsTable::FitsTable() : m_interpolator(nullptr) {}
 
 FitsTable::FitsTable(const FitsTable & rhs) 
-   : m_interpolator(0), m_logEnergies(rhs.m_logEnergies), m_mus(rhs.m_mus),
+   : m_interpolator(nullptr), m_logEnergies(rhs.m_logEnergies), m_mus(rhs.m_mus),
      m_values(rhs.m_values), m_ebounds(rhs.m_ebounds),
      m_tbounds(rhs.m_tbounds), m_minCosTheta(rhs.m_minCosTheta), 
      m_maxValue(rhs.m_maxValue) {
@@ -89,8 +90,8 @@ FitsTable::~FitsTable() {
    delete m_interpolator;
 }
 
-double FitsTable::
-value(double logenergy, double costh, bool interpolate) const {
+auto FitsTable::
+value(double logenergy, double costh, bool interpolate) const -> double {
    if (interpolate) {
       if (costh > m_mus.back()) {
          costh = m_mus.back();
@@ -123,8 +124,8 @@ value(double logenergy, double costh, bool interpolate) const {
 
 void FitsTable::getValues(std::vector<double> & values) const {
    values.clear();
-   for (size_t i(0); i < m_values.size(); i++) {
-      values.push_back(m_values.at(i));
+   for (double m_value : m_values) {
+      values.push_back(m_value);
    }
 }
 
@@ -141,7 +142,7 @@ void FitsTable::getCornerPars(double logE, double costh,
    }
 }
 
-double FitsTable::getPar(size_t ilogE, size_t icosth) const {
+auto FitsTable::getPar(size_t ilogE, size_t icosth) const -> double {
    return m_interpolator->getPar(ilogE, icosth);
 }
 
@@ -165,8 +166,8 @@ void FitsTable::getVectorData(const tip::Table * table,
    std::vector<float> my_values;
    row[fieldName].get(my_values);
 
-   for (size_t i(0); i < my_values.size(); i++) {
-      values.push_back(my_values.at(i));
+   for (float my_value : my_values) {
+      values.push_back(my_value);
    }
 }
 

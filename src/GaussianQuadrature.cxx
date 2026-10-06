@@ -10,14 +10,15 @@
 
 #include <algorithm>
 #include <vector>
+#include <array> 
 
 #include "st_facilities/dgaus8.h"
 #include "st_facilities/GaussianQuadrature.h"
 
 namespace st_facilities {
 
-double GaussianQuadrature::integrate(D_fp func, double xmin, double xmax,
-                                     double error, long & ier) {
+auto GaussianQuadrature::integrate(D_fp func, double xmin, double xmax,
+                                     double error, long & ier) -> double  {
    double integral(0);
    dgaus8_(func, &xmin, &xmax, &error, &integral, &ier);
    if (ier == 1) {
@@ -25,7 +26,8 @@ double GaussianQuadrature::integrate(D_fp func, double xmin, double xmax,
    }
 
 // use explicit Gaussian quadrature
-   double T[48] = {0.016276744849602969579, 0.048812985136049731112,
+//   double T[48] = {0.016276744849602969579, 0.048812985136049731112,
+std::array<double, 48> T = {0.016276744849602969579, 0.048812985136049731112,
                    0.081297495464425558994, 0.113695850110665920911,
                    0.145973714654896941989, 0.178096882367618602759,
                    0.210031310460567203603, 0.241743156163840012328,
@@ -50,7 +52,8 @@ double GaussianQuadrature::integrate(D_fp func, double xmin, double xmax,
                    0.992543900323762624572, 0.995981842987209290650,
                    0.998364375963181677724, 0.999689503883230766828};
 
-   double W[48] = {0.032550614492363166242, 0.032516118713868835987,
+   // double W[48] = {0.032550614492363166242, 0.032516118713868835987,
+   std::array<double, 48> W = {0.032550614492363166242, 0.032516118713868835987,
                    0.032447163714064269364, 0.032343822568575928429,
                    0.032206204794030250669, 0.032034456231992663218,
                    0.031828758894411006535, 0.031589330770727168558,

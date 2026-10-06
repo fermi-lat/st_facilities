@@ -25,11 +25,11 @@ static const std::string sPathDelim = ":";
 
 namespace st_facilities {
 
-  std::string Env::appendFileName(const std::string & dir, const std::string & file) {
+  auto Env::appendFileName(const std::string & dir, const std::string & file) -> std::string {
     return join(dir, file, sFileDelim);
   }
 
-  std::string Env::appendPath(const std::string & path, const std::string & dir) {
+  auto Env::appendPath(const std::string & path, const std::string & dir) -> std::string {
     return join(path, dir, sPathDelim);
   }
 
@@ -112,15 +112,15 @@ namespace st_facilities {
     }
   }
 
-  std::string Env::getEnv(const std::string & name) {
+  auto Env::getEnv(const std::string & name) -> std::string {
     std::string retval;
     const char * cp = ::getenv(name.c_str());
-    if (0 != cp) retval = cp;
+    if (nullptr != cp) retval = cp;
     else throw std::runtime_error("Env::getEnv could not expand the name \"" + name + "\"");
     return retval;
   }
 
-  std::string Env::getDataDir(const std::string & pkg_id) {
+  auto Env::getDataDir(const std::string & pkg_id) -> std::string {
     std::string dir;
 
     // First attempt to expand the pattern $<pkg>ROOT/data.
@@ -134,7 +134,7 @@ namespace st_facilities {
     return dir;
   }
 
-  std::string Env::getXmlDir(const std::string & pkg_id) {
+  auto Env::getXmlDir(const std::string & pkg_id) -> std::string {
     std::string dir;
 
     // First attempt to expand the pattern $<pkg>ROOT/data.
@@ -148,14 +148,14 @@ namespace st_facilities {
     return dir;
   }
 
-  std::string Env::getPkgRoot(const std::string & pkg_id) {
+  auto Env::getPkgRoot(const std::string & pkg_id) -> std::string {
     if (pkg_id.empty()) throw std::runtime_error("Env::getPkgRoot was passed a blank package identifier.");
     std::string retval("$" + pkg_id + "ROOT");
-    for (std::string::iterator itor = retval.begin(); itor != retval.end(); ++itor) *itor = toupper(*itor);
+    for (char & itor : retval) itor = toupper(itor);
     return retval;
   }
 
-  std::string Env::join(const std::string & string1, const std::string & string2, const std::string delim) {
+  auto Env::join(const std::string & string1, const std::string & string2, const std::string delim) -> std::string {
     std::string retval;
 
     if (string1.empty()) retval = string2;

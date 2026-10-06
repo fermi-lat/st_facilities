@@ -19,7 +19,7 @@ namespace {
    public:
       Array(const std::vector<double> & values, size_t nx) 
          : m_values(values), m_nx(nx) {}
-      double operator()(size_t iy, size_t ix) const {
+      auto operator()(size_t iy, size_t ix) const -> double {
          return m_values[iy*m_nx + ix];
       }
    private:
@@ -64,7 +64,7 @@ Bilinear::Bilinear(const std::vector<double> & x,
    m_values.push_back(array(y.size()-1, x.size()-1));
 }
 
-double Bilinear::operator()(double x, double y) const {
+auto Bilinear::operator()(double x, double y) const -> double {
    double tt, uu;
    std::vector<double> xvals(4);
    std::vector<double> yvals(4);
@@ -73,8 +73,8 @@ double Bilinear::operator()(double x, double y) const {
    return evaluate(tt, uu, &zvals[0]);
 }
 
-double Bilinear::evaluate(double tt, double uu, 
-                          const double * zvals) {
+auto Bilinear::evaluate(double tt, double uu, 
+                          const double * zvals) -> double {
    double value = ( (1. - tt)*(1. - uu)*zvals[0]
                     + tt*(1. - uu)*zvals[1]
                     + tt*uu*zvals[2]
@@ -87,9 +87,12 @@ void Bilinear::getCorners(double x, double y,
                           double * corner_xvals,
                           double * corner_yvals,
                           double * zvals) const {
-   typedef std::vector<double>::const_iterator const_iterator_t;
+   // typedef std::vector<double>::const_iterator const_iterator_t;
+   using const_iterator_t = std::vector<double>::const_iterator;
 
-   const_iterator_t ix(std::upper_bound(m_x.begin(), m_x.end(), x));
+   auto ix(std::upper_bound(m_x.begin(), m_x.end(), x));
+   // const auto ix = std::upper_bound(m_x.begin(), m_x.end(), x);
+
    if (ix == m_x.end() && x != m_x.back()) {
       throw std::invalid_argument("Bilinear::operator: x out of range");
    }
@@ -98,9 +101,10 @@ void Bilinear::getCorners(double x, double y,
    } else if (x <= m_x.front()) {
       ix = m_x.begin() + 1;
    }
-   int i(ix - m_x.begin());
+   // int i(ix - m_x.begin());
+   auto i(ix - m_x.begin());
     
-   const_iterator_t iy(std::upper_bound(m_y.begin(), m_y.end(), y));
+   auto iy(std::upper_bound(m_y.begin(), m_y.end(), y));
    if (iy == m_y.end() && y != m_y.back()) {
       throw std::invalid_argument("Bilinear::operator: y out of range");
    }
@@ -132,7 +136,7 @@ void Bilinear::getCorners(double x, double y,
    zvals[3] = m_values[xsize*(j) + (i-1)];
 }
 
-double Bilinear::getPar(size_t i, size_t j) const {
+auto Bilinear::getPar(size_t i, size_t j) const -> double {
    Array array(m_values, m_x.size());
    return array(j+1, i+1);
 }

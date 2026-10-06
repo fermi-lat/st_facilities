@@ -32,7 +32,7 @@ using namespace st_facilities;
 
 class st_facilitiesTests : public CppUnit::TestFixture {
 
-   CPPUNIT_TEST_SUITE(st_facilitiesTests);
+   CPPUNIT_TEST_SUITE(st_facilitiesTests); // NOLINT(modernize-use-trailing-return-type)
 
    CPPUNIT_TEST(test_dgaus8);
    CPPUNIT_TEST(test_GaussianQuadrature);
@@ -92,7 +92,7 @@ public:
    Parabola(double a, double b, double c) :
      m_a(a), m_b(b), m_c(c) { }
 
-   double operator()(double x) const {
+   auto operator()(double x) const -> double {
       return m_a*x*x + m_b*x + m_c;
    }
 
@@ -104,7 +104,7 @@ private:
 
 class Linear {
 public:
-   double operator()(double x) const {
+   auto operator()(double x) const -> double {
       return x;
    }
 };
@@ -112,7 +112,7 @@ public:
 class Foo {
 public:
    Foo(const Linear & bar) : m_bar(bar) {}
-   double operator()(double x) const {
+   auto operator()(double x) const -> double {
       double err;
       int ier;
       return x*GaussianQuadrature::dgaus8(m_bar, 0, 1, err, ier);
@@ -124,7 +124,8 @@ private:
 class Edisp {
 public:
    Edisp(double ltail, double rwidth) : m_ltail(ltail), m_rwidth(rwidth) {}
-   double operator()(double x) const {
+   // double operator()(double x) const {
+   auto operator()(double x) const -> double {
       double arg(x/m_rwidth);
       if (arg > 40) {
          return std::pow(x + 1, m_ltail)*std::exp(-arg);
@@ -187,9 +188,18 @@ void st_facilitiesTests::test_dgaus8() {
 
 PowerLaw powerLaw(1., 2.);
 
+/*
 double power_law(double * x) {
    return powerLaw(*x);
 }
+*/
+
+auto power_law(double * x) -> double {    
+    return powerLaw(*x); 
+}
+
+
+
 
 void st_facilitiesTests::test_GaussianQuadrature() {
    double xmin(0);
@@ -441,7 +451,7 @@ void st_facilitiesTests::test_FileSys_expandFileList() {
   CPPUNIT_ASSERT(cont.back() == "fits_file1.fits");
 }
 
-int main() {
+auto main() -> int {
    CppUnit::TextTestRunner runner;
 
    runner.addTest(st_facilitiesTests::suite());

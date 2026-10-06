@@ -8,6 +8,7 @@
  */
 
 #include <cmath>
+#include <array>
 
 #include <iostream>
 #include <memory>
@@ -25,19 +26,26 @@
 
 namespace st_facilities {
 
+/*
 FitsImage::FitsImage(const std::string & fitsfile,
                      const std::string & extension) 
    : m_filename(fitsfile), m_extension(extension) {
    read_fits_image();
 }
+*/
+FitsImage::FitsImage(const std::string & fitsfile , const std::string & extension)
+    : m_filename(std::move(fitsfile)), m_extension(std::move(extension)) {
+    read_fits_image();
+}
 
+// const FitsImage & rhs
 FitsImage::FitsImage(const FitsImage & rhs) 
    : m_filename(rhs.m_filename), m_extension(rhs.m_extension) {
    m_axes = rhs.m_axes;
    m_image = rhs.m_image;
 }
 
-FitsImage & FitsImage::operator=(const FitsImage & rhs) {
+auto FitsImage::operator=(const FitsImage & rhs) -> FitsImage & {
    if (this != &rhs) {
       m_filename = rhs.m_filename;
       m_extension = rhs.m_extension;
@@ -51,15 +59,15 @@ FitsImage::~FitsImage() {}
 
 void FitsImage::getAxisDims(std::vector<int> &axisDims) const {
    axisDims.clear();
-   for (unsigned int i = 0; i < m_axes.size(); i++) {
-      axisDims.push_back(m_axes[i].size);
+   for (const auto & m_axe : m_axes) {
+      axisDims.push_back(m_axe.size);
    }
 }
 
 void FitsImage::getAxisNames(std::vector<std::string> &axisNames) const {
    axisNames.clear();
-   for (unsigned int i = 0; i < m_axes.size(); i++) {
-      axisNames.push_back(m_axes[i].axisType);
+   for (const auto & m_axe : m_axes) {
+      axisNames.push_back(m_axe.axisType);
    }
 }
 
@@ -105,10 +113,10 @@ void FitsImage::getSolidAngles(std::vector<double> &solidAngles) const {
    delete proj;
 }
 
-double FitsImage::solidAngle(const astro::SkyDir & A,
+auto FitsImage::solidAngle(const astro::SkyDir & A,
                              const astro::SkyDir & B, 
                              const astro::SkyDir & C,
-                             const astro::SkyDir & D) {
+                             const astro::SkyDir & D) -> double {
 // Approximation to the pixel solid angle:  Divide into two
 // triangles and compute the area as if the space were flat.
    double dOmega1 = A.difference(B)*A.difference(D)
@@ -151,16 +159,21 @@ void FitsImage::read_fits_image() {
       m_axes.resize(dims.size());
    }
 
-   char * crval[] = {const_cast<char *>("CRVAL1"), 
-                     const_cast<char *>("CRVAL2"), 
-                     const_cast<char *>("CRVAL3")};
-   char * cdelt[] = {const_cast<char *>("CDELT1"), 
+   // char * crval[] = 
+   std::array<char*, 3> crval = { const_cast<char *>("CRVAL1"), 
+                      const_cast<char *>("CRVAL2"), 
+                      const_cast<char *>("CRVAL3")};
+   // char * cdelt[] = 
+    std::array<char*, 3> cdelt = {const_cast<char *>("CDELT1"), 
                      const_cast<char *>("CDELT2"), 
                      const_cast<char *>("CDELT3")};
-   char * crpix[] = {const_cast<char *>("CRPIX1"), 
+   // char * crpix[] = 
+   std::array<char*, 3> crpix = {const_cast<char *>("CRPIX1"), 
                      const_cast<char *>("CRPIX2"), 
                      const_cast<char *>("CRPIX3")};
-   char * ctype[] = {const_cast<char *>("CTYPE1"), 
+
+   //  char * ctype[] =
+   std::array<char*, 3> ctype = {const_cast<char *>("CTYPE1"), 
                      const_cast<char *>("CTYPE2"), 
                      const_cast<char *>("CTYPE3")};
 
@@ -181,8 +194,8 @@ void FitsImage::read_fits_image() {
    }
 }
 
-astro::SkyProj * FitsImage::skyProjCreate(const std::string & fitsFile,
-                                          const std::string & extension) {
+auto FitsImage::skyProjCreate(const std::string & fitsFile,
+                                          const std::string & extension) -> astro::SkyProj * {
    const tip::Image * image = 
       tip::IFileSvc::instance().readImage(fitsFile, extension);
 
@@ -205,7 +218,11 @@ astro::SkyProj * FitsImage::skyProjCreate(const std::string & fitsFile,
       trans = ctype.substr(ctype.size() - 3, 3);
    }
    
-   double crpix[2], crval[2], cdelt[2];
+   // double crpix[2], crval[2], cdelt[2];
+   std::array<double, 2> crpix; 
+   std::array<double, 2> crval; 
+   std::array<double, 2> cdelt;
+
    header["CRPIX1"].get(crpix[0]);
    header["CRVAL1"].get(crval[0]);
    header["CDELT1"].get(cdelt[0]);
@@ -222,8 +239,10 @@ astro::SkyProj * FitsImage::skyProjCreate(const std::string & fitsFile,
 
    delete image;
 
-   astro::SkyProj * proj = 
-      new astro::SkyProj(trans, crpix, crval, cdelt, crota2, galactic);
+   // astro::SkyProj * proj = 
+   //    new astro::SkyProj(trans, crpix, crval, cdelt, crota2, galactic);
+   // auto * proj = new astro::SkyProj(trans, crpix, crval, cdelt, crota2, galactic);
+   auto * proj = new astro::SkyProj(trans, crpix.data(), crval.data(), cdelt.data(), crota2, galactic);
 
    return proj;
 }

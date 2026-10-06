@@ -13,6 +13,7 @@
 #include <iostream>
 #include <sstream>
 #include <stdexcept>
+#include <array>
 
 #include "fitsio.h"
 
@@ -27,10 +28,10 @@
 #include "st_facilities/Util.h"
 
 namespace {
-   bool reverse_cmp(double x, double y) {
+   auto reverse_cmp(double x, double y) -> bool {
       return x > y;
    }
-   int findIndex(const std::vector<double> & xx, double x) {
+   auto findIndex(const std::vector<double> & xx, double x) -> int {
       std::vector<double>::const_iterator ix;
       if (xx.front() < xx.back()) {
          ix = std::upper_bound(xx.begin(), xx.end(), x);
@@ -69,7 +70,7 @@ namespace {
 
 namespace st_facilities {
 
-   bool Util::fileExists(const std::string & filename) {
+   auto Util::fileExists(const std::string & filename) -> bool {
       std::ifstream file(filename.c_str());
       return file.is_open();
    }
@@ -105,17 +106,18 @@ namespace st_facilities {
    }
 
    void Util::cleanLine(std::string & line) {
-      char CR[1];
+      // char CR[1];
+      std::array<char, 1> CR;
       CR[0] = 0x0d;
-      if (line.find(CR) != std::string::npos) {
+      if (line.find(CR.data()) != std::string::npos) {
          std::vector<std::string> tokens;
-         facilities::Util::stringTokenize(line, CR, tokens);
+         facilities::Util::stringTokenize(line, CR.data(), tokens);
          line = tokens.front();
       }
    }
 
-   bool Util::isFitsFile(const std::string & infile) {
-      fitsfile * fp(0);
+   auto Util::isFitsFile(const std::string & infile) -> bool {
+      fitsfile * fp(nullptr);
       int status(0);
       fits_open_file(&fp, const_cast<char *>(infile.c_str()), 
                      READONLY, &status);
@@ -145,7 +147,7 @@ namespace st_facilities {
       }
    }
 
-   bool Util::isXmlFile(std::string filename) {
+   auto Util::isXmlFile(std::string filename) -> bool {
       std::vector<std::string> tokens;
       facilities::Util::stringTokenize(filename, ".", tokens);
       if (*(tokens.end()-1) == "xml") {
@@ -154,9 +156,9 @@ namespace st_facilities {
       return false;
    }
 
-   double Util::interpolate(const std::vector<double> &x,
+   auto Util::interpolate(const std::vector<double> &x,
                             const std::vector<double> &y,
-                            double xx) {
+                            double xx) -> double {
       if (xx < x.front() || xx > x.back()) {
          std::ostringstream message;
          message << "Util::interpolate:\n"
@@ -170,8 +172,9 @@ namespace st_facilities {
       if ( xx == x.back() ) {
 	return y.back();
       }
-      std::vector<double>::const_iterator it 
-         = std::upper_bound(x.begin(), x.end(), xx) - 1;
+      // std::vector<double>::const_iterator it 
+      //   = std::upper_bound(x.begin(), x.end(), xx) - 1;
+      auto it = std::upper_bound(x.begin(), x.end(), xx) - 1;
       unsigned int indx = it - x.begin();
       double yy;
       if (*(it+1) != *it) {
@@ -182,9 +185,9 @@ namespace st_facilities {
       return yy;
    }
 
-   double Util::bilinear(const std::vector<double> &xx, double x, 
+   auto Util::bilinear(const std::vector<double> &xx, double x, 
                          const std::vector<double> &yy, double y, 
-                         const std::vector<double> &z) {
+                         const std::vector<double> &z) -> double {
       int i = ::findIndex(xx, x);
       if (i < 1) {
          i = 1;
@@ -225,9 +228,9 @@ namespace st_facilities {
       return value;
    }
 
-   double Util::bilinear(const std::vector<double> &xx, double x, 
+   auto Util::bilinear(const std::vector<double> &xx, double x, 
                          const std::vector<double> &yy, double y, 
-                         const std::vector< std::vector<double> > &z) {
+                         const std::vector< std::vector<double> > &z) -> double {
 
       std::vector<double>::const_iterator ix;
       if (x < *(xx.begin())) {
@@ -276,8 +279,8 @@ namespace st_facilities {
       return value;
    }
 
-   bool Util::expectedException(const std::exception & eObj, 
-                                const std::string & targetMessage) {
+   auto Util::expectedException(const std::exception & eObj, 
+                                const std::string & targetMessage) -> bool {
       std::string message(eObj.what());
       return message.find(targetMessage.c_str()) 
          != std::string::npos;
@@ -341,10 +344,10 @@ namespace st_facilities {
       }         
    }
 
-   astro::JulianDate Util::currentTime() {
-      std::time_t my_time = std::time(0);
+   auto Util::currentTime() -> astro::JulianDate {
+      std::time_t my_time = std::time(nullptr);
       std::tm * now = std::gmtime(&my_time);
-      if (now != 0) {
+      if (now != nullptr) {
          double hours = now->tm_hour + now->tm_min/60. + now->tm_sec/3600.;
          astro::JulianDate current_time(now->tm_year + 1900, now->tm_mon + 1,
                                         now->tm_mday, hours);

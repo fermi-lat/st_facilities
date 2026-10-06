@@ -19,10 +19,10 @@
 
 namespace st_facilities {
 
-Environment * Environment::s_instance(0);
+Environment * Environment::s_instance(nullptr);
 
-Environment & Environment::instance() {
-   if (s_instance == 0) {
+auto Environment::instance() -> Environment & {
+   if (s_instance == nullptr) {
       s_instance = new Environment();
    }
    return *s_instance;
@@ -32,22 +32,22 @@ Environment::Environment() {
    facilities::commonUtilities::setupEnvironment();
 }
 
-std::string Environment::dataPath(const std::string & package) {
+auto Environment::dataPath(const std::string & package) -> std::string {
    instance();
    return facilities::commonUtilities::getDataPath(package);
 }
 
-std::string Environment::getEnv(const std::string & envvar) {
+auto Environment::getEnv(const std::string & envvar) -> std::string {
    instance();
    return facilities::commonUtilities::getEnvironment(envvar);
 }
 
-std::string Environment::packagePath(const std::string & package) {
+auto Environment::packagePath(const std::string & package) -> std::string {
    instance();
    return facilities::commonUtilities::getPackagePath(package);
 }
 
-std::string Environment::xmlPath(const std::string & package) {
+auto Environment::xmlPath(const std::string & package) -> std::string {
    instance();
    return facilities::commonUtilities::getXmlPath(package);
 }

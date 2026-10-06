@@ -44,6 +44,9 @@ public:
    FitsImage(const std::string & fitsfile, 
              const std::string & extension="");
 
+   // FitsImage(const std::string  fitsfile, const std::string  extension);
+
+   // FitsImage(const FitsImage &);
    FitsImage(const FitsImage &);
 
    virtual ~FitsImage();
