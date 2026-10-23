@@ -182,6 +182,22 @@ library `dgaus8` and the test `test_st_facilities`.
 None of its own (`st_facilitiesLib.py` is legacy SCons). `FitsImage` and
 `Util` are exposed through `pyLikelihood`.
 
+### Environment variables
+
+st_facilities reads no fixed variable of its own. Its helpers read the
+variable the caller names:
+- `Env::getEnv(name)` (`src/Env.cxx`, the only `getenv`) throws if `name`
+  is unset; `timeSystem` uses it for `TIMING_DIR`.
+- `Env::expandEnvVar` (and so `FileSys::expandFileList`) expands `$X`,
+  `${X}` and `$(X)` and throws if any is unset.
+- Legacy `Env::getDataDir`/`getXmlDir` read `$<PKG>ROOT`, then
+  `$DATAPATH`/`$XMLPATH`; conda activation sets none of these.
+- `Environment` calls `facilities::commonUtilities::setupEnvironment()`
+  on first use (see the facilities doc).
+
+Variables set by conda activation are described under "Runtime
+environment" in ScienceTools' `docs/architecture/README.md`.
+
 ### File formats
 
 None of its own. `FitsTable` expects one row with the vector columns
@@ -203,8 +219,11 @@ extension with `CRVALn/CDELTn/CRPIXn/CTYPEn`.
   `${FERMI_INSTALL_DATADIR}` (`share/fermitools/data/`) with no package
   subdirectory. Nothing in the code reads it.
 - **Test executable:** `test_st_facilities` (`src/test/test.cxx`), a CppUnit
-  `TextTestRunner`. It is **not registered with CTest**, so run it by
-  hand. It exits 0 on success and 1 on failure.
+  `TextTestRunner`. It is **not registered with CTest**. The default run
+  of the project harness `recipe/tests/ST-unit-test` (see "Testing" in
+  ScienceTools' `docs/architecture/README.md`) runs it and checks only the
+  exit status; no output is compared and no st_facilities reference data
+  exists anywhere. It exits 0 on success and 1 on failure.
   - Active tests: template `dgaus8` (including a nested integral and a
     sharp energy-dispersion-like integrand), `GaussianQuadrature::integrate`,
     `RootFinder`, `Util::file_ok`/`readLines`/`expectedException`/
